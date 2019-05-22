@@ -1,0 +1,53 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+    <head>
+        <title>Sample DYMO Label Plug-In</title>
+
+
+{#           <script src="http://labelwriter.com/software/dls/sdk/js/DYMO.Label.Framework.1.0.beta.js"#}
+{#        type="text/javascript" charset="UTF-8"> </script>#}
+          <script src="/static/js/PrintLabel.js"></script>
+          <script src="/static/js/DYMO.Label.Framework.latest.js"  type="text/javascript" charset="UTF-8"></script>
+        <script>
+
+
+
+            function GetDYMOPrinters()
+            {   
+
+                var printers = dymo.label.framework.getPrinters();
+                if (printers.length == 0)
+                throw "No DYMO printers are installed. Install DYMO printers.";
+                var printerName = "";
+                for (var i = 0; i < printers.length; ++i)
+                {
+                    var printer = printers[i];
+                    if (printer.printerType == "LabelWriterPrinter")
+                    {
+                        printerName = printer.name;
+                        break;
+                    }
+                }
+
+            var label = DYMO.Label.Framework.Label.Open("MyText.label");
+            label.SetObjectText("NameTxt", "John Smith");
+
+            label.print("DYMO LabelWriter");
+            }
+     </script>
+
+    </head>
+    <body onload="  GetDYMOPrinters()">
+         <form action="" method="post" id="DYMOLabel">
+        <center>
+        <h2>DYMO Label  Example</h2>
+         <input type=button value="Get DYMO Printers" onClick="GetDYMOPrinters()">
+     </center>
+    </form>
+
+
+
+
+    </body>
+</html>

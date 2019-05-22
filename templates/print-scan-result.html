@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <style>
+        .color-bordered-table.muted-bordered-table {
+            border: 2px solid #98a6ad;
+        }
+
+        .table-bordered {
+            border: 1px solid #e4e7ea;
+        }
+
+        .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td, .table > thead > tr > th, .table-bordered {
+            border-top: 1px solid #e4e7ea;
+        }
+
+        .table {
+            margin-bottom: 10px;
+        }
+
+        .text-capitalize {
+            text-transform: capitalize !important;
+        }
+
+        .table-bordered {
+            border: 1px solid #eceeef;
+        }
+
+        .table {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        #wrapper {
+            width: 100%;
+        }
+
+        .col-sm-12 {
+            position: relative;
+            width: 100%;
+            min-height: 1px;
+        }
+
+        .row {
+            margin-right: -7.5px;
+            margin-left: -7.5px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .white-box {
+            background: #ffffff;
+            padding: 5px;
+            margin-bottom: 5px;
+        }
+
+        .color-bordered-table .muted-bordered-table {
+            border: 2px solid #98a6ad;
+        }
+
+        .container-fluid {
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-bottom: 15px;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        body {
+                background: #4F5467; font-family: 'Poppins', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+            color: #686868;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 1.42857143;
+        }
+
+        @page {
+            size: {{ pagesize }};
+            margin: 1cm;
+            @frame footer {
+            -pdf-frame-content: footerContent;
+            bottom: 0cm;
+            margin-left: 9cm;
+            margin-right: 9cm;
+            height: 1cm;
+        }
+        }
+
+        .table-condensed > thead > tr > th, .table-condensed > tbody > tr > th, .table-condensed > tfoot > tr > th, .table-condensed > thead > tr > td, .table-condensed > tbody > tr > td, .table-condensed > tfoot > tr > td {
+            padding: 2px !important;
+        }
+
+        .table {
+            color: #000;
+        }
+
+        table, tr, td, th, tbody, thead, tfoot {
+            page-break-inside: avoid !important;
+        }
+
+        .row-fluid {
+            width: 100%;
+        }
+
+        .row-fluid .span4:first-child {
+            margin-left: 0;
+        }
+
+        .row-fluid span:first-child {
+            margin-left: -5px;
+        }
+
+        .row-fluid .span4 {
+            width: 31.914893617021278%;
+        }
+
+        .row-fluid .span4 {
+            display: block;
+            width: 100%;
+            min-height: 30px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            float: left;
+            margin-left: 2.127659574468085%;
+        }
+
+        .span4 {
+            width: 320px;
+        }
+
+        .span4 {
+            float: left;
+            min-height: 1px;
+            margin-left: 20px;
+        }
+
+        .e-block {
+            display: block;
+            clear: both;
+        }
+
+        .e-block .title {
+            display: block;
+            color: #666;
+            background-color: #f5f5f5;
+            padding: 2px 2px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .e-block .content {
+            /* font-family: "Courier New", "Courier"; */
+            padding: 3px 3px;
+        }
+
+        .content {
+            margin-top: 2px;
+            /* margin-left: 15px; */
+        }
+    </style>
+</head>
+<body>
+
+<div id="wrapper">
+    <div id="page-wrapper" style="margin:0;">
+        <div class="container-fluid">
+    <!-- row  -->
+             <div class="row">
+                <div class="col-sm-12">
+                    <div class="white-box">
+                        <div class="white-title">.</div>
+                        <span style="font: bold; font-size: 20px;" class="box-title" style="text-align: center;">{{ hospital.name }}</span><br>
+                        <span class="box-title" style="text-align: center;">{{ hospital.address }}</span><br>
+                        <span class="box-title" style="text-align: center;">{{ hospital.phone_no }}</span>
+                        <hr>
+                        <div class="table-responsive">
+                            <table id="example23"
+                                   class="table table-bordered color-bordered-table.muted-bordered-table table-striped text-capitalize text-uppercase display nowrap"
+                                   cellspacing="0"
+                                   width="100%">
+                                <table class="table table-bordered color-bordered-table.muted-bordered-table table-striped text-capitalize text-uppercase display nowrap">
+                                    <tbody>
+                                        <tr>
+                                            <td>Patient's Name:</td>
+                                            <td>{{ patient_obj.0.title }} {{ patient_obj.0.patient_fname }} {{ patient_obj.0.patient_lname }}</td>
+                                            <td>Gender:</td>
+                                            <td>{{ patient_obj.0.sex }}</td>
+                                        </tr>
+                                    <tr>
+                                        <td>Patient EMRID:</td>
+                                        <td>{{ patient_obj.0.patient_ID }}</td>
+                                        <td>Nationality:</td>
+                                        <td>{{ patient_obj.0.country_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phone Number:</td>
+                                        <td>{{ patient_obj.0.phonenumber }}</td>
+                                        <td>Email Address:</td>
+                                        <td>{{ patient_obj.0.email }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Coverage:</td>
+                                        <td>{{ patient_obj.0.insurance_name }}</td>
+                                        <td>Request Date:</td>
+                                        <td>{{ patient_obj.0.request_date }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Scan Code:</td>
+                                        <td>{{ patient_obj.0.requestCode }}</td>
+                                        <td>Approved By:</td>
+                                        <td>{{ patient_obj.0.profession }} {{ patient_obj.0.firstname }} {{ patient_obj.0.lastname }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Approved Date:</td>
+                                        <td>{{ patient_obj.0.approved_date }}</td>
+                                        <td>Referred By:</td>
+                                        <td>{{ patient_obj.0.referral_name }} [{{ patient_obj.0.referral_company }}]</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <table class="table table-bordered">
+                                    {% for re in scan_result %}
+                                        <div class="row" style="font-size: 110%">
+                                            <div class="white-box">
+                                                <div class="span12">{{ re.note|safe }}
+                                                    <p class="clear"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+
+                                </table>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+<div id="footerContent">
+            {%block page_foot%}
+                Page <pdf:pagenumber>
+            {%endblock%}
+</div>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% block breadCrumb %}
+   <div class="row bg-title">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <ol class="breadcrumb">
+                            <li><a href="{% url 'appointments' %}">Appointments</a></li>
+                            <li class="active">Book Appointment</li>
+                        </ol>
+                    </div>
+
+                </div>
+{% endblock %}
+      {% block body %}
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="white-box">
+                            <h3 class="box-title">Book For An Appointment</h3>
+                            <form class="form-material form-horizontal" method="post" action="">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label class="col-sm-12">Location</label>
+                                    <div class="col-sm-12">
+                                        <select class="form-control" name="clinic" required="required">
+                                                <option value=""> Select Location</option>
+                                                {% for hosp in hc %}
+                                                    <option value="{{ clinic.id }}">{{ hc.name }}</option>
+                                            {% endfor %}
+                                            </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-12">Clinic</label>
+                                    <div class="col-sm-12">
+                                        <select class="form-control" name="clinic" required="required">
+                                                <option value=""> Select Clinic</option>
+                                                {% for clinic in clinics %}
+                                                    <option value="{{ clinic.id }}">{{ clinic.name }}</option>
+                                            {% endfor %}
+                                            </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <label class="col-md-12">
+                                                <strong>Hint</strong>: 0 schedules an appointment
+                                                for now
+                                        </label>
+                                        <input class="form-control" style="min-width: 10px" type="number" data-decimals="0" min="0" name="frequency" placeholder="example: 2" required="required" value="0"></label>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="col-md-12">-</label>
+                                        <select class="form-control" name="interval" required="required">
+                                                <option value="days">Day(s)</option>
+                                                <option value="weeks">Week(s)</option>
+                                                <option value="months">Month(s)</option>
+                                            </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-12">Reason For The Appointment</label>
+                                    <div class="col-md-12">
+                                        <textarea class="form-control" rows="3" name="reason" required></textarea>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-info waves-effect waves-light m-r-10">Submit</button>
+                                <button type="reset" class="btn btn-inverse waves-effect waves-light">Cancel</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+{% endblock %}
+{% block script %}
+    <script type="application/javascript">
+     var app = {
+			sdates: [],
+			edates: [],
+			freq: "",
+			clinic: "",
+			patient: "",
+			location: "",
+			staffs: [],
+			resource: "",
+			description: "",
+			allDay: false,
+			forced: false,
+            fname: "",
+            lname: "",
+            sex: "",
+            phone: "",
+            email: ""
+		};
+
+function validate() {
+			var duration = $('[name="duration"]').val();
+			app.allDay = true;
+			app.freq = "";
+			app.patient = $("#patient").val();
+			app.resource = "0";
+			app.staffs = "<?=$_SESSION['staffID']?>";
+			app.clinic = $("#apt_clinic_id").val();
+			app.location = $('select[name="location_id"]').val();
+			app.description = "auto-scheduled visit";
+			app.fname = $('input[name="fname"]').val();
+			app.lname = $('input[name="lname"]').val();
+			app.sex = $('select[name="sex"]').val();
+			app.phone = $('input[name="phone"]').val();
+			app.email = $('input[name="email"]').val();
+			return  !($("#apt_clinic_id").val() === null || $("#apt_clinic_id").val().trim() === "" ); //(!($("#patient").val() === null || $("#patient").val().trim() === "") || ($('input[name="fname"]').val() === null ||  $('input[name="lname"]').val().trim() === ""));// || (($("#patient").val() === null || $("#patient").val().trim() === "" ) && !($('input[name="fname"]').val() === null &&  $('input[name="lname"]').val() === null) )));
+		}
+
+
+    $(document).ready(function () {
+        
+
+
+        $('#start_time').datetimepicker({
+            datepicker:false,
+	allowTimes:['12:00','13:00','15:00','17:00','17:05','17:20','19:00','20:00'],
+	step:5
+            
+        });
+        $('#end_time').datetimepicker({
+            datepicker:false,
+	allowTimes:['12:00','13:00','15:00','17:00','17:05','17:20','19:00','20:00'],
+	step:5
+        });
+    });
+
+    </script>
+{% endblock %}

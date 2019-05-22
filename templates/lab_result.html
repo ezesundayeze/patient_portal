@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load load_extras %}
+{% block breadCrumb %}
+    <div class="row bg-title">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+            {#                        <h4 class="page-title">My Dashboard</h4> #}
+            <ol class="breadcrumb">
+                <li><a href="#">Patient</a></li>
+                <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'labs' %}">Labs</a></li>
+                <li class="active">Lab Result</li>
+            </ol>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+{% endblock %}
+{% block body %}
+    <!-- row  -->
+             <div class="row">
+                    <div class="col-sm-12">
+                        <div class="white-box">
+                            <h3 class="box-title m-b-0">Lab Result</h3>
+                            <hr>
+                            <div class="table-responsive">
+                                <table id="example23" class="example23 table table-bordered table-striped text-capitalize">
+                                    <thead>
+                                    <tr>
+                                        <th><strong><u>---</u></strong></th>
+                                        <th><strong><u>Result</u></strong></th>
+                                        <th><strong><u>Reference</u></strong></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for re in result_obj %}
+                                    <tr>
+                                        <td>{{ re.label }}</td>
+                                        <td>{{ re.value }}</td>
+                                        <td>{{ re.reference }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                    </tbody>
+{#                                </table>#}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+    <!-- /row -->
+{% endblock %}
+
+{% block script %}
+     <script>
+        $(document).ready(function () {
+            $('.example').DataTable();
+            $('.example23').DataTable({
+                dom: 'Bfrtip'
+                , buttons: [
+                     'pdf', 'print'
+                ]
+            });
+
+
+        });
+    </script>
+{% endblock %}

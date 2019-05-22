@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+{% load humanize %}
+{% block content %}
+
+    <div class="container">
+     <div class="col-sm-12" style="text-align: center;">
+         <strong>List of portal user agreements</strong>
+     </div>
+     <div class="col-sm-12">
+         <table class="table-responsive table-bordered">
+             <thead>
+             <tr>
+                 <th>Date Created</th>
+                 <th>Status</th>
+                 <th>Content</th>
+                 <th>*</th>
+             </tr>
+             </thead>
+             <tbody>
+             {% for n in obj %}
+             <tr >
+
+                 <td >{{ n.created_on }}</td>
+                 <td>{{ n.active }}</td>
+                 <td class="wrapper"><div >{{ n.notes|truncatechars:300 |safe }}</div></td>
+                 <td><a href="{% url 'edit' n.id %}">Edit</a></td>
+
+             </tr>{% endfor %}
+             </tbody>
+         </table>
+     </div>
+    </div>
+{% endblock %}

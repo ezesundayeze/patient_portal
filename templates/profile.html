@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+{% block styles %}
+    <style>
+      img{
+          max-width: 100%;
+          max-height: 100%;
+      }
+    </style>
+ {% endblock %}
+{% block breadCrumb %}
+    <div class="row bg-title">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            {#                        <h4 class="page-title">My Dashboard</h4> #}
+            <ol class="breadcrumb">
+                <li><a href="#">Dashbpard</a></li>
+                <li class="active">Profile</li>
+            </ol>
+        </div>
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+{% endblock %}
+
+{% block body %}
+
+
+    <!-- /.row -->
+    <!-- .row -->
+    <div class="row">
+        <div class="col-md-4 col-xs-12">
+            <div class="white-box">
+                <div class="user-bg text-center">
+                        <img src="{{ pic }}" alt="user-img" class="img-circle">
+                </div>
+                <div class="user-btm-box">
+                    <!-- .row -->
+                    <div class="row text-center m-t-10">
+                        <div class="col-md-6 b-r"><span>Name</span>
+                            <p>{{ patient.0.title }} {{ patient.0.fname }} {{ patient.0.mname }} {{ patient.0.lname }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <span>Gender</span>
+                            <p>{{ patient.0.sex }}</p>
+                        </div>
+
+                    </div>
+                    <hr>
+                    <div class="row text-center m-t-10">
+                        <div class="col-md-6 b-r"><span>Phone</span>
+                            <p>{% for num in contacts %}
+                                {{ num.phone }}-{{ num.type }},
+                            {% endfor %}
+                            </p>
+                        </div>
+                        <div class="col-md-6"><span>Email ID</span>
+                            <p>{{ patient.0.email }}</p>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+
+                    <hr>
+                    <div class="row text-center m-t-10">
+                        <div class="col-md-6 b-r"><span>Date Of Birth</span>
+                            <p>
+                                {{ patient.0.date_of_birth }}
+                            </p>
+                        </div>
+                        <div class="col-md-6"><span>Legacy #</span>
+                            <p>{{ patient.0.legacy_patient_id }}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row text-center m-t-10">
+                        <div class="col-md-6 b-r"><span>Blood Group</span>
+                            <p>
+                                {{ patient.0.bloodgroup }}
+                            </p>
+                        </div>
+                        <div class="col-md-6"><span>GenoType</span>
+                            <p>{{ patient.0.bloodtype }}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row text-center m-t-10">
+                        <div class="col-md-6 b-r"><span>Religion</span>
+                            <p>{{ patient.0.relgion_name }}
+                            </p>
+                        </div>
+                        <div clas="col-md-6"><span>Occupation</span>
+                            <p>{{ patient.0.occupation }}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <h4>Address Of Origin</h4>
+                    <hr>
+                    <div class="row text-center m-t-10">
+                        <div class="col-md-6 b-r"><span>Nationality</span>
+                            <p>
+                                {{ patient.0.country }}
+                            </p>
+                        </div>
+                        <div class="col-md-6"><span>Region</span>
+                            <p>{{ patient.0.region }}</p>
+                        </div>
+                    </div>
+                    <hr>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-8 col-xs-12">
+            <div class="white-box">
+                <h3 class="m-t-30">Address Of Residence</h3>
+                <hr>
+                <div class="row text-center m-t-10">
+                    <div class="col-md-6 b-r">
+                        <span>Region</span>
+                        <p class="text-muted">{{ patient.0.region }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <span>Industry</span>
+                        <p>{{ patient.0.industry }}</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row text-center m-t-10">
+                    <div class="col-md-12">
+                        <span>work Address</span>
+                        <p class="text-muted">{{ patient.0.kinsAddress }}</p>
+                    </div>
+
+                </div>
+
+                <h3>Next Kin Details</h3>
+                <hr>
+                <div class="row text-center m-t-10">
+                    <div class="col-md-12">
+                        <span>Name</span>
+                        <p>{{ patient.0.kinsFirstName }} {{ patient.0.kinsLastName }}</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row text-center m-t-10">
+                    <div class="col-md-6 b-r">
+                        <span>Phone Number</span>
+                        <p>{{ patient.0.kinsPhone }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <span>Relationship</span>
+                        <p>{{ patient.0.relationship }}</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row text-center m-t-10">
+                    <div class="col-md-12">
+                        <span>Address</span>
+                        <p>{{ patient.0.next_kin_address }}</p>
+                    </div>
+                </div>
+                <h3>Insurance</h3>
+                <hr>
+                <div class="row text-center m-t-10">
+                    <div class="col-md-4 b-r">
+                        <span>Type</span>
+                        <p>{{ patient.0.ins_type }}</p>
+                    </div>
+                    <div class="col-md-4 b-r">
+                        <span>Scheme</span>
+                        <p>{{ patient.0.insurance_name }}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span>Expiration</span>
+                        <p>{{ patient.0.ins_expire }}</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row text-center m-t-10">
+                    <div class="col-md-3 b-r">
+                        <span>Policy #</span>
+                        <p>{{ patient.0.policy_number }}</p>
+                    </div>
+                    <div class="col-md-3 b-r">
+                        <span>Enrollee #</span>
+                        <p>{{ patient.0.enrollee_number }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <span>Referrer</span>
+                        <p>{{ patient.0.referrer_name }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html moznomarginboxes mozdisallowselectionprint>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <style>
+        .color-bordered-table.muted-bordered-table {
+            border: 2px solid #98a6ad;
+        }
+
+        .table-bordered {
+            border: 1px solid #e4e7ea;
+        }
+
+        .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td, .table > thead > tr > th, .table-bordered {
+            border-top: 1px solid #e4e7ea;
+        }
+
+        .table {
+            margin-bottom: 10px;
+        }
+
+        .text-capitalize {
+            text-transform: capitalize !important;
+        }
+
+        .table-bordered {
+            border: 1px solid #eceeef;
+        }
+
+        .table {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        #wrapper {
+            width: 100%;
+        }
+
+        .col-sm-12 {
+            position: relative;
+            width: 100%;
+            min-height: 1px;
+        }
+
+        .row {
+            margin-right: -7.5px;
+            margin-left: -7.5px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .white-box {
+            background: #ffffff;
+            padding: 5px;
+            margin-bottom: 5px;
+        }
+
+        .color-bordered-table .muted-bordered-table {
+            border: 2px solid #98a6ad;
+        }
+
+        .container-fluid {
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-bottom: 15px;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        body {
+                background: #4F5467; font-family: 'Poppins', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+            color: #686868;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 1.42857143;
+        }
+
+        @page {
+            size: {{ pagesize }};
+            margin: 1cm;
+            @frame footer {
+            -pdf-frame-content: footerContent;
+            bottom: 0cm;
+            margin-left: 9cm;
+            margin-right: 9cm;
+            height: 1cm;
+        }
+        }
+
+        .table-condensed > thead > tr > th, .table-condensed > tbody > tr > th, .table-condensed > tfoot > tr > th, .table-condensed > thead > tr > td, .table-condensed > tbody > tr > td, .table-condensed > tfoot > tr > td {
+            padding: 2px !important;
+        }
+
+        .table {
+            color: #000;
+        }
+
+        table, tr, td, th, tbody, thead, tfoot {
+            page-break-inside: avoid !important;
+        }
+
+        .row-fluid {
+            width: 100%;
+        }
+
+        .row-fluid .span4:first-child {
+            margin-left: 0;
+        }
+
+        .row-fluid span:first-child {
+            margin-left: -5px;
+        }
+
+        .row-fluid .span4 {
+            width: 31.914893617021278%;
+        }
+
+        .row-fluid .span4 {
+            display: block;
+            width: 100%;
+            min-height: 30px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            float: left;
+            margin-left: 2.127659574468085%;
+        }
+
+        .span4 {
+            width: 320px;
+        }
+
+        .span4 {
+            float: left;
+            min-height: 1px;
+            margin-left: 20px;
+        }
+
+        .e-block {
+            display: block;
+            clear: both;
+        }
+
+        .e-block .title {
+            display: block;
+            color: #666;
+            background-color: #f5f5f5;
+            padding: 2px 2px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .e-block .content {
+            /* font-family: "Courier New", "Courier"; */
+            padding: 3px 3px;
+        }
+
+        .content {
+            margin-top: 2px;
+            /* margin-left: 15px; */
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <div id="page-wrapper" style="margin:0;">
+        <div class="container-fluid">
+            <!-- row  -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="white-box" >
+                    <div class="white-title">.</div>
+                        <span style="font: bold; font-size: 20px;" class="box-title" style="text-align: center;">{{ hospital.name }}</span><br>
+                        <span class="box-title" style="text-align: center;">{{ hospital.address }}</span><br>
+                        <span class="box-title" style="text-align: center;">{{ hospital.phone_no }}</span>
+
+                        <hr>
+                        <div class="table-responsive">
+                             <table class="table table-bordered color-bordered-table.muted-bordered-table table-striped text-capitalize text-uppercase display nowrap ">
+                                    <tr>
+                                        <th>Patient Name</th>
+                                        <td>{{ enc_obj.o.title }} {{ enc_obj.0.fname }} {{ enc_obj.0.mname }} {{ enc_obj.0.lname }}</td>
+                                        <th>Gender</th>
+                                        <td>{{ enc_obj.p_sex }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Hospital No.</th>
+                                        <td>{{ enc_obj.0.legacy_patient_id }}</td>
+                                        <th>NHIS/HMO ID No*:</th>
+                                        <td>{{ enc_obj.0.enrollee_number }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>D.o.B</th>
+                                        <td>{{ enc_obj.0.date_of_birth }}</td>
+                                        <th>Age</th>
+                                        <td>{{ enc_obj.0.age }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>HMO</th>
+                                        <td>{{ enc_obj.0.scheme_name }}</td>
+                                        <th>Payer No.*</th>
+                                        <td>{{ enc_obj.0.company_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Company/Office</th>
+                                        <td>{{ enc_obj.0.work_address }}</td>
+                                        <th>Enrollee Type</th>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Occupation</th>
+                                        <td>{{ enc_obj.0.occupation }}</td>
+                                        <th>Email</th>
+                                        <td style="text-transform: initial;">{{ enc_obj.0.email }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Address</th>
+                                        <td>{{ enc_obj.0.address }}</td>
+                                        <th>Telephone</th>
+                                        <td>{{ enc_obj.0.phonenumber }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Date Of Notification</th>
+                                        <td>{{ enc_obj.0.start_date }}</td>
+                                        <th></th>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                             </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-sm-12 col-xs-12">
+                                        <div class="white-box">
+                                            <section style="width: 850px;">
+                                                <div class="row-fluid">
+                                                    <div class="span4">
+                                                        <div class="e-block">
+                                                            <div class="title">Start Date</div>
+                                                            <div class="content">{{ enc_obj.0.start_date }}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="span4">
+                                                        <div class="e-block">
+                                                            <div class="title">Department</div>
+                                                            <div class="content">{{ enc_obj.0.depart_name }}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="span4">
+                                                        <div class="e-block">
+                                                            <div class="title">Specialization</div>
+                                                            <div class="content">{{ enc_obj.0.staff_special_name }}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="e-block">
+                                                    <div class="title">Vital Signs</div>
+                                                    <div class="content">
+                                                        {% if vitals.count == 0 %}
+                                                            Not available
+                                                        {% else %}
+                                                            {% for v in vitals %}
+                                                                <div class="no-wrap">
+                                                                    <strong>{{ v.type_name }}</strong>: {{ v.value }} {{ v.type_unit }}
+                                                                </div>
+                                                            {% endfor %}
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                                <div class="e-block">
+                                                    <div class="title">Presenting Complaints</div>
+                                                    <div class="content">
+                                                        <ul>  {% for cp in complain %}
+                                                            <li>{{ cp.description|safe }}</li>{% endfor %}</ul>
+                                                    </div>
+                                                </div>
+                                                <div class="e-block">
+                                                    <div class="title">Review of Systems / Examinations</div>
+                                                    <div class="content">
+                                                        <ul>{% for sys in sys_review %}
+                                                            <li>{{ sys.description|safe }}</li>{% endfor %}</ul>
+                                                    </div>
+                                                </div>
+                                                <div class="e-block">
+                                                    <div class="title">Past Medical History</div>
+                                                    <div class="content">
+                                                        <ul>{% for p_m in p_medic_history %}
+                                                            <li>{{ p_m.description|safe }}</li>{% endfor %}</ul>
+                                                    </div>
+                                                </div>
+                                                <div class="e-block">
+                                                    <div class="title">Past Drug History</div>
+                                                    <div class="content">
+                                                        <ul>{% for d_h in p_drug_history %}
+                                                            <li>
+                                                                <div class="row-fluid">
+                                                                    <div class="span5"> {{ d_h.gen_name }} {{ d_h.gen_weight }} {{ d_h.gen_form }} </div>
+                                                                    <div class="fadedText span7">{{ d_h.comment }}</div>
+                                                                </div>
+                                                            </li>{% endfor %}</ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="e-block">
+                                                    <div class="title">Allergies</div>
+                                                    <div class="content">
+                                                        <ul>{% for alleg in allergies %}
+                                                            <li>{{ alleg.category }} {{ alleg.drug_super_gen }} {{ alleg.allergen }} {{ alleg.severity }} {{ alleg.reaction }}</li>{% endfor %}
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="e-block">
+                                                    <div class="title">Family/Social History</div>
+                                                    <div class="content">
+                                                        <ul>{% for f_h in family_hist %}
+                                                            <li>{{ f_h.description|safe }}</li>{% endfor %}</ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="e-block">
+                                                    <div class="title">Physical Examination</div>
+                                                    <div class="content">
+                                                        <ul>{% for phy in physical_exam %}
+                                                            <li>{{ phy.description|safe }}</li>{% endfor %}</ul>
+                                                    </div>
+                                                </div>
+                                                <div class="e-block">
+                                                    <div class="title">Physical Examination Summary</div>
+                                                    <div class="content">
+                                                        <ul>{% for e_note in exam_notes %}
+                                                            <li>{{ e_note.description|safe }}</li>{% endfor %}</ul>
+                                                    </div>
+                                                </div>
+                                                <div class="e-block">
+                                                    <div class="title">Diagnoses</div>
+                                                    <div class="content">
+                                                        <ul>{% for diag in diagnoses %}
+                                                            <li>{{ diag.description|safe }}</li>{% endfor %}</ul>
+                                                    </div>
+                                                </div>
+                                                <div class="e-block">
+                                                    <div class="title">Investigations</div>
+                                                    <div class="content">
+                                                        <ul>{% for inv in investigations %}
+                                                            <li>{{ inv.descriptioin|safe }}</li>{% endfor %}</ul>
+                                                    </div>
+                                                </div>
+                                                <div class="e-block">
+                                                    <div class="title">Plans</div>
+                                                    <div class="content">
+                                                        <ul>{% for p in plans %}
+                                                            <li>{{ p.description|safe }}</li>{% endfor %}</ul>
+                                                        <u>Medication</u>
+                                                        <ul>{% for m in medications %}
+                                                            <li>{{ m.description|safe }}</li>{% endfor %}</ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="e-block hide_">
+                                                    <div class="title">Consulting Doctor</div>
+                                                    <div class="content">
+                                                        {{ enc_obj.0.firstname }} {{ enc_obj.0.lastname }}
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="e-block">
+                                                    <div class="title">Signed</div>
+                                                    <div class="content">
+			<span class="pull-left">
+				{{ enc_obj.0.firstname }} {{ enc_obj.0.lastname }}  on  {{ enc_obj.0.signed_on }}
+			</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="clear"></div>
+                                                <div class="clear"></div>
+                                                <div class="clear"></div>
+
+                                                <div class="e-block">
+                                                    <div class="title">Other Notes</div>
+                                                    <div class="content">
+                                                        {% for n in addenda %}
+                                                            <div class="row-fluid">
+                                                                <div class="span3">{{ n.date }}</div>
+                                                                <div class="span8">{{ n.note }}</div>
+                                                                <div class="span1">{{ n.username }}</div>
+                                                            </div>
+                                                        {% endfor %}
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+{#                            </table>#}
+{#                        </div>#}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footerContent">
+    {% block page_foot %}
+        Page
+        <pdf:pagenumber>
+    {% endblock %}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+{% extends 'base.html' %}
+
+{% load mathfilters %}
+
+{% block breadCrumb %}
+    <div class="row bg-title">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            {#                        <h4 class="page-title">My Dashboard</h4> #}
+            <ol class="breadcrumb">
+                <li><a href="#">Patient</a></li>
+                <li class="active">Dashboard</li>
+            </ol>
+        </div>
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+{% endblock %}
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <a href="{% url 'encounters' %}">
+                <div class="white-box">
+                    <div class="r-icon-stats"><i class="fa fa-sticky-note"></i>
+                        <div class="bodystate">
+                            <h4>{{ encounter_c }}</h4> <span class="text-muted">Total Encounter</span></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-6">
+            <div class="white-box">
+                <div class="r-icon-stats"><i class="fa fa-bed"></i>
+                    <div class="bodystate">
+                        <h4>{{ admi_c }}</h4> <span class="text-muted">Total Admissions.</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <a href="{% url 'bills' %}">
+                <div class="white-box">
+                    <div class="r-icon-stats"><i class="fa fa-money"></i>
+                        <div class="bodystate">
+                            <h5 class="currency">Private Bill: <span></span>{{ p_bill|abs }}</h5><h5>Insured Bill: <span
+                                class="text-muted currency">  <span></span>{{ ins_bill|abs }} </span></h5> <span
+                                class="text-muted">Bill Summary</span></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!--/row -->
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="white-box">
+                <h3 class="box-title m-b-0">My Encounters</h3>
+                <p class="text-muted">This is my encounters</p>
+                <div class="table-responsive">
+                    {% if encounters %}
+                        <table class="example23 table table-bordered table-striped text-capitalize color-bordered-table muted-bordered-table display nowrap">
+                            <thead>
+                            <tr>
+                                <th>Date/Time</th>
+                                <th>Specialization</th>
+                                <th>Doctor</th>
+{#                                <th>*</th>#}
+
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            {% for i in encounters %}
+
+                                <tr>
+                                    <td>{{ i.start_date }}</td>
+                                    <td>{{ i.name }}</td>
+                                    <td>{{ i.firstname }} {{ i.lastname }}</td>
+{#                                    <td>#}
+{#                                        <div class="btn-group m-r-10">#}
+{#                                            <button aria-expanded="false" data-toggle="dropdown"#}
+{#                                                    class="btn btn-success dropdown-toggle waves-effect waves-light"#}
+{#                                                    type="button"><span class="caret"></span></button>#}
+{#                                            <ul role="menu" class="dropdown-menu dropdown-user animated flipInY">#}
+{#                                                <li><a href="{% url 'view_encounter' i.id %}">View</a></li>#}
+{#                                                <li><a href="{% url 'print_encounter'  i.id %}"#}
+{#                                                       target="_blank">Print</a></li>#}
+{#                                            </ul>#}
+{#                                        </div>#}
+
+{#                                    </td>#}
+                                </tr>
+
+                            {% endfor %}
+
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <span class="label label-danger">There is no encounter found</span>
+                    {% endif %}
+                    {% if encounters.columns.count > 5 %}
+                        <p style="text-align: center;"><a href="{% url 'encounters' %}">More....</a></p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div> <!-- /row -->
+
+    <!-- row -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="white-box">
+                <h3 class="box-title m-b-0">Scan</h3>
+                <p class="text-muted">My Scan Result Info</p>
+                <div class="table-responsive">
+                    <table class="example23 table table-bordered table-striped text-capitalize color-bordered-table muted-bordered-table display nowrap">
+                        <thead>
+                        <tr>
+                            <th>Date/Time</th>
+                            <th>Order Name</th>
+                            <th>Type</th>
+                            <th>*</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% if scans %}
+                            {% for s in scans %}
+                                <tr>
+                                    <td>{{ s.approved_date }}</td>
+                                    <td>{{ s.requestcode }}</td>
+                                    <td>{{ s.name }}</td>
+                                    <td>
+                                        <div class="btn-group m-r-10">
+                                            <button aria-expanded="false" data-toggle="dropdown"
+                                                    class="btn btn-success dropdown-toggle waves-effect waves-light"
+                                                    type="button"><span >Action</span></button>
+                                            <ul role="menu" class="dropdown-menu dropdown-user animated flipInY">
+                                               <li><a href="{% url 'scan_result' s.id %}">View</a>
+                                                    </li>
+                                                    <li><a href="{% url 'print_s_result' s.id %}" target="_blank">Print</a></li>
+                                            </ul>
+                                        </div>
+
+                                        {#                                    <a href="{% url 'scan_result' s.id %}">Result</a>#}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        {% endif %}
+                        </tbody>
+
+                    </table>
+                    {% if scans.columns.count > 5 %}
+                        <p style="text-align: center;"><a href="{% url 'scans' %}">More....</a></p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /row -->
+
+    <!-- row -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="white-box">
+                <h3 class="box-title m-b-0">Laboratory Test</h3>
+                <p class="text-muted">My lab test results</p>
+                <div class="table-responsive">
+                    <table class="example23 table table-bordered table-striped text-capitalize color-bordered-table muted-bordered-table display nowrap">
+                        <thead>
+                        <tr>
+                            <th>Date/Time</th>
+                            <th>Order Name</th>
+                            <th>*</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        {% for l in labs %}
+                            {% if l.id >= 1 %}
+                                <tr>
+                                    <td>{{ l.test_date }}</td>
+                                    <td>{{ l.lab_group_id }}</td>
+                                    <td>
+                                      <div class="btn-group m-r-10">
+                                            <button aria-expanded="false" data-toggle="dropdown"
+                                                    class="btn btn-success dropdown-toggle waves-effect waves-light"
+                                                    type="button"><span >Action</span></button>
+                                            <ul role="menu" class="dropdown-menu dropdown-user animated flipInY">
+                                               <li><a href="{% url 'lab_result' l.id %}">View</a></li>
+                                                <li><a href="{% url 'print_result' l.id %}" target="_blank">Print</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr><span class="label label-danger">There is no lab result found</span></tr>
+                            {% endif %}
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- /row -->
+
+{% endblock %}
+
+{% block script %}
+    <script>
+        var requestUrl = "http://ip-api.com/json";
+        $(document).ready(function () {
+            $.ajax({
+                url: requestUrl,
+                type: 'GET',
+                success: function (json) {
+                    if (json.country === 'Nigeria') {
+                        $('.currency').children('span').html('&#8358;')
+                    } else if (json.country === 'Ghana') {
+                        $('.currency').children('span').html('&#8373;')
+                    }
+
+                },
+                error: function (err) {
+                    console.log("Request failed, error= " + err);
+                }
+            });
+            $('.example').DataTable();
+            $('.example23').DataTable({
+                dom: 'Bfrtip'
+                , buttons: []
+            });
+        });
+    </script>
+
+{% endblock %}

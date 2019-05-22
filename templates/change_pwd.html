@@ -1,0 +1,28 @@
+{% extends 'index.html' %} {% block content %}
+<div class="container">
+    <div class="col-sm-12">
+        <div style="font-size: 30px; text-align: center !important;">Change your password </div>
+        <form class="form-horizontal form-material" action="" method="post">
+            {% csrf_token %} {% if message %}<span class="text-{{ mtype }}">{{ message }}</span> {% endif %}
+            <div class="form-group m-t-40">
+                <div class="col-xs-12">
+                    <input class="form-control" type="text" name="username" required="" placeholder="Enter your username">                    </div>
+            </div>
+
+            <div class="form-group m-t-40">
+                <div class="col-xs-12">
+                    <input class="form-control" type="password" name="password1" required="" placeholder="Enter your password">                    </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input class="form-control" type="password" name="password2" required="" placeholder="re-enter your password">                    </div>
+            </div>
+            <div class="form-group text-center m-t-20">
+                <div class="col-xs-12">
+                    <button type="submit" class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" id="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

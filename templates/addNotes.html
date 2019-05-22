@@ -1,0 +1,70 @@
+{% extends 'index.html' %}
+
+{% block styles %}
+{#    <link href="http://demo.medicplus.com.ng:82/static/trumbowyg/dist/ui/trumbowyg.min.css"  rel="stylesheet" />#}
+
+{#    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">#}
+
+
+<!-- include summernote css/js-->
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote-bs4.css" rel="stylesheet">
+    <style>
+      #id_active{
+          display: inline-block;
+          border: 1px solid #a9a9a9;
+          border-radius: .25em;
+          width: 1.3em;
+          height: 1.3em;
+          float: left;
+          margin-right: .5em;
+      }
+
+    </style>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+     <div class="col-sm-12" style="margin-top: 10px;">
+         <div style="border: double; padding: 20px; font-size: 20px; font-style: oblique;"><p>
+             Here, the hospital administrator is required to type the hospital patient agreement, which the patient is expected
+             to accept on his or here first time login into the patient portal site.
+         </p></div>
+     </div>
+        <div class="col-sm-12">
+  <form class="form-horizontal form-material"  action="" method="post">
+                    {% csrf_token %}
+                     {% if message %}<span class="text-{{ mtype }}">{{ message }}</span> {% endif %}
+                    {{ form.as_p }}
+                    <div class="form-group text-center m-t-20">
+                        <div class="col-xs-12">
+                            <button type="submit" class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" id="submit">Submit</button>
+                        </div>
+                    </div>
+  <div id="summernote"></div>
+                </form>
+    </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+{#    <script src="http://demo.medicplus.com.ng:82/static/trumbowyg/dist/trumbowyg.min.js"></script>#}
+{#    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>#}
+{#<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>#}
+{#    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>#}
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote-bs4.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+
+    <script>
+    $(document).ready(function () {
+         $('#id_notes').summernote({
+        placeholder: 'Add patient portal user agreement here.',
+        tabsize: 4,
+        height: 300
+      });
+    })
+
+
+    </script>
+{% endblock %}

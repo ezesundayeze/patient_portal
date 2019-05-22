@@ -1,0 +1,170 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+    <div class="inner">
+            <div style="font-size: 30px; text-align: center !important;">Patient Registration Page</div>
+            <form method="post" action="" class="createForm" autocomplete="off">
+                {% csrf_token %}
+                <div class="container-fluid">
+                    <div data-wizard-init>
+                        <ul class="steps">
+                            <li data-step="1">Personal Details</li>
+                            <li data-step="2">Contact Info</li>
+                            <li data-step="3">Address of Origin</li>
+                            <li data-step="4">Address of Residence</li>
+                            <li data-step="5">Next of Kin Details</li>
+                        </ul>
+                        <div class="steps-content">
+                            <div data-step="1">
+                                <h4>Personal Details</h4>
+                                <p>
+                                    {{ form.title.label }}
+                                    {{ form.title.error }}
+                                    {{ form.title }}
+                                </p>
+                                <p>
+                                    {{ form.fname.label }}
+                                    {{ form.fname.error }}
+                                    {{ form.fname }}
+                                </p>
+
+                                <p>
+                                    {{ form.lname.label }}
+                                    {{ form.lname.error }}
+                                    {{ form.lname }}
+                                </p>
+                                <p>{{ form.sex.label }}
+                                    {{ form.sex.error }}
+                                    {{ form.sex }}
+                                 <p>
+                                <p>{{ form.date_of_birth.label }}
+                                    {{ form.date_of_birth.error }}
+                                    {{ form.date_of_birth }}
+                                 <p>
+                                    {{ form.blood_group.label }}
+                                    {{ form.blood_group.error }}
+                                    {{ form.blood_group }}
+                                </p>
+                                <p>
+                                    {{ form.geno_type.label }}
+                                    {{ form.geno_type.error }}
+                                    {{ form.geno_type }}
+                                </p>
+								<p>
+								  {{ form.occupation.label }}
+                                    {{ form.occupation.error }}
+                                    {{ form.occupation }}
+								</p>
+                            </div>
+                            <div data-step="2">
+                                <h4>Contact details</h4>
+                                <p>
+                                    <label for="show_phone">Phone Number</label>
+                                <span class="reset_phone"><a>Reset</a></span><span class="required-text">*</span>
+                                <input type="text" name="show_phone" id="show_phone" readonly>
+                                <input type="hidden" readonly name="patientContacts" id="patientContacts">
+                                </p>
+                                <p>
+                                    {{ form.email.label }}
+                                    {{ form.email.error }}
+                                    {{ form.email }}
+                                </p>
+                            </div>
+
+                            <div data-step="3">
+                                <h4>Address of Origin</h4>
+                                <p>
+                                    {{ form.country.label }}
+                                    {{ form.country.error }}
+                                    {{ form.country }}
+                                </p>
+                                <p>
+                                    {{ form.state.label }}
+                                    {{ form.state.error }}
+                                    {{ form.state }}
+                                </p>
+                                <p>
+                                    <label for="id_lga">Lga:</label>
+                                    <select id="id_lga" name="lga_id">
+                                        <option value=""></option>
+                                    </select>
+                                </p>
+                                <p>
+                                    {{ form.religion.label }}
+                                    {{ form.religion.error }}
+                                    {{ form.religion }}
+                                </p>
+                                <p>
+                                    {{ form.industry.label }}
+                                    {{ form.industry.error }}
+                                    {{ form.industry }}
+                                </p>
+                                <p>
+                                    {{ form.work_address.label }}
+                                    {{ form.work_address.error }}
+                                    {{ form.work_address }}
+                                </p>
+
+                            </div>
+                            <div data-step="4">
+                                <h4>Address of Residence</h4>
+                                <p>
+                                    {{ form.res_state.label }}
+                                    {{ form.res_state.error }}
+                                    {{ form.res_state }}
+                                </p>
+                               <p>
+                                    <label for="id_res_lga">Lga:</label>
+                                    <select id="id_res_lga" name="res_lga_id">
+                                        <option value=""></option>
+                                    </select>
+                                </p>
+                                <p><label for="id_res_dist">District:</label>
+                                    <select id="id_res_dist" name="res_dist_id">
+                                        <option value=""></option>
+                                    </select>
+                                </p>
+                                <p>
+                                    {{ form.res_address.label }}
+                                    {{ form.res_address.error }}
+                                    {{ form.res_address }}
+                                </p>
+
+                            </div>
+                            <div data-step="5">
+                                <h4>Next of Kin Details</h4>
+                                <p>
+                                    {{ form.next_kin_fname.label }}
+                                    {{ form.next_kin_fname.error }}
+                                    {{ form.next_kin_fname }}
+                                </p>
+                                <p>
+                                    {{ form.next_kin_lname.label }}
+                                    {{ form.next_kin_lname.error }}
+                                    {{ form.next_kin_lname }}
+                                </p>
+                                <p>
+                                    {{ form.next_kin_phone.label }}
+                                    {{ form.next_kin_phone.error }}
+                                    {{ form.next_kin_phone }}
+                                </p>
+                                <p>
+                                    {{ form.next_kin_address.label }}
+                                    {{ form.next_kin_address.error }}
+                                    {{ form.next_kin_address }}
+                                </p>
+                                <p>
+                                    {{ form.relationship.label }}
+                                    {{ form.relationship.error }}
+                                    {{ form.relationship }}
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+            </form>
+
+        </div>
+{% endblock %}

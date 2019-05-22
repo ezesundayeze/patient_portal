@@ -1,0 +1,2146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include 'htmltags/title.html' %}
+
+    <!-- CSS -->
+    <link href="http://demo.medicplus.com.ng:86/static/bootstrap.min.css" rel="stylesheet">
+    <link href="http://demo.medicplus.com.ng:86/static/owl.carousel.css" rel="stylesheet">
+    <link href="http://demo.medicplus.com.ng:86/static/owl.theme.css" rel="stylesheet">
+    <link href="http://demo.medicplus.com.ng:86/static/flexslider.css" rel="stylesheet">
+    <link href="http://demo.medicplus.com.ng:86/static/animate.css" rel="stylesheet">
+    <link href="http://demo.medicplus.com.ng:86/static/css/jquery.wizard.css" rel="stylesheet">
+    <link href="http://demo.medicplus.com.ng:86/static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://demo.medicplus.com.ng:86/static/datetimepicker-master/jquery.datetimepicker.css" rel="stylesheet">
+    <link href="http://demo.medicplus.com.ng:86/static/style.css" type="text/css" rel="stylesheet">
+    <link href="http://demo.medicplus.com.ng:86/static/plugins/bower_components/sweetalert/sweetalert.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="http://demo.medicplus.com.ng:86/static/css/select2.css"/>
+    <link rel="stylesheet" href="http://demo.medicplus.com.ng:86/static/css/intlTelInput.css"/>
+    <link rel="stylesheet" href="http://demo.medicplus.com.ng:86/static/assets/css/main.css"/>
+
+
+    <link rel='dns-prefetch' href='//fonts.googleapis.com'/>
+    <link rel='dns-prefetch' href='//s.w.org'/>
+    <link rel="alternate" type="application/rss+xml" title="Euracare Ghana &raquo; Feed"
+          href="http://euracare.com.gh/feed/"/>
+    <link rel="alternate" type="application/rss+xml" title="Euracare Ghana &raquo; Comments Feed"
+          href="http://euracare.com.gh/comments/feed/"/>
+    <!-- This site uses the Google Analytics by MonsterInsights plugin v6.2.4 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+    <script type="text/javascript" data-cfasync="false">
+        var disableStr = 'ga-disable-UA-102224432-2';
+
+        /* Function to detect opted out users */
+        function __gaTrackerIsOptedOut() {
+            return document.cookie.indexOf(disableStr + '=true') > -1;
+        }
+
+        /* Disable tracking if the opt-out cookie exists. */
+        if (__gaTrackerIsOptedOut()) {
+            window[disableStr] = true;
+        }
+
+        /* Opt-out function */
+        function __gaTrackerOptout() {
+            document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+            window[disableStr] = true;
+        }
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', '__gaTracker');
+
+        __gaTracker('create', 'UA-102224432-2', 'auto');
+        __gaTracker('set', 'forceSSL', true);
+        __gaTracker('require', 'displayfeatures');
+        __gaTracker('require', 'linkid', 'linkid.js');
+        __gaTracker('send', 'pageview');
+    </script>
+    <!-- / Google Analytics by MonsterInsights -->
+    <script type="text/javascript">
+        window._wpemojiSettings = {
+            "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/",
+            "ext": ".png",
+            "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/",
+            "svgExt": ".svg",
+            "source": {"concatemoji": "http:\/\/euracare.com.gh\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.3"}
+        };
+        !function (a, b, c) {
+            function d(a) {
+                var b, c, d, e, f = String.fromCharCode;
+                if (!k || !k.fillText)return !1;
+                switch (k.clearRect(0, 0, j.width, j.height), k.textBaseline = "top", k.font = "600 32px Arial", a) {
+                    case"flag":
+                        return k.fillText(f(55356, 56826, 55356, 56819), 0, 0), b = j.toDataURL(), k.clearRect(0, 0, j.width, j.height), k.fillText(f(55356, 56826, 8203, 55356, 56819), 0, 0), c = j.toDataURL(), b !== c && (k.clearRect(0, 0, j.width, j.height), k.fillText(f(55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447), 0, 0), b = j.toDataURL(), k.clearRect(0, 0, j.width, j.height), k.fillText(f(55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447), 0, 0), c = j.toDataURL(), b !== c);
+                    case"emoji4":
+                        return k.fillText(f(55358, 56794, 8205, 9794, 65039), 0, 0), d = j.toDataURL(), k.clearRect(0, 0, j.width, j.height), k.fillText(f(55358, 56794, 8203, 9794, 65039), 0, 0), e = j.toDataURL(), d !== e
+                }
+                return !1
+            }
+
+            function e(a) {
+                var c = b.createElement("script");
+                c.src = a, c.defer = c.type = "text/javascript", b.getElementsByTagName("head")[0].appendChild(c)
+            }
+
+            var f, g, h, i, j = b.createElement("canvas"), k = j.getContext && j.getContext("2d");
+            for (i = Array("flag", "emoji4"), c.supports = {
+                everything: !0,
+                everythingExceptFlag: !0
+            }, h = 0; h < i.length; h++)c.supports[i[h]] = d(i[h]), c.supports.everything = c.supports.everything && c.supports[i[h]], "flag" !== i[h] && (c.supports.everythingExceptFlag = c.supports.everythingExceptFlag && c.supports[i[h]]);
+            c.supports.everythingExceptFlag = c.supports.everythingExceptFlag && !c.supports.flag, c.DOMReady = !1, c.readyCallback = function () {
+                c.DOMReady = !0
+            }, c.supports.everything || (g = function () {
+                c.readyCallback()
+            }, b.addEventListener ? (b.addEventListener("DOMContentLoaded", g, !1), a.addEventListener("load", g, !1)) : (a.attachEvent("onload", g), b.attachEvent("onreadystatechange", function () {
+                "complete" === b.readyState && c.readyCallback()
+            })), f = c.source || {}, f.concatemoji ? e(f.concatemoji) : f.wpemoji && f.twemoji && (e(f.twemoji), e(f.wpemoji)))
+        }(window, document, window._wpemojiSettings);
+    </script>
+
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <link rel='stylesheet' id='validate-engine-css-css'
+          href='http://euracare.com.gh/wp-content/plugins/wysija-newsletters/css/validationEngine.jquery.css?ver=2.7.10'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='layerslider-css'
+          href='http://euracare.com.gh/wp-content/plugins/LayerSlider/static/layerslider/css/layerslider.css?ver=6.1.6'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='ls-google-fonts-css'
+          href='http://fonts.googleapis.com/css?family=Lato:100,300,regular,700,900%7COpen+Sans:300%7CIndie+Flower:regular%7COswald:300,regular,700&#038;subset=latin%2Clatin-ext'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='contact-form-7-css'
+          href='http://euracare.com.gh/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.8'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='rs-plugin-settings-css'
+          href='http://euracare.com.gh/wp-content/plugins/revslider/public/assets/css/settings.css?ver=5.3.1.5'
+          type='text/css' media='all'/>
+    <style id='rs-plugin-settings-inline-css' type='text/css'>
+        #rs-demo-id {
+        }
+    </style>
+    <link rel='stylesheet' id='timetable_font_lato-css'
+          href='//fonts.googleapis.com/css?family=Lato%3A400%2C700&#038;ver=4.8.3' type='text/css' media='all'/>
+    <link rel='stylesheet' id='medical-clinic-style-css'
+          href='http://euracare.com.gh/wp-content/themes/Euracare%20Ghana/style.css?ver=1.0.0' type='text/css'
+          media='screen, print'/>
+    <style id='medical-clinic-style-inline-css' type='text/css'>
+
+        .header_mid .header_mid_inner .logo_wrap {
+            width: 365px;
+        }
+
+        .header_mid_inner .logo .logo_retina {
+            width: 236px;
+            max-width: 236px;
+        }
+
+        #page .cmsmasters_social_icon_color.cmsmasters_social_icon_1 {
+            color: #ffffff;
+        }
+
+        #page .cmsmasters_social_icon_color.cmsmasters_social_icon_1:hover {
+            color: #3065b5;
+        }
+
+        #page .cmsmasters_social_icon_color.cmsmasters_social_icon_2 {
+            color: #ffffff;
+        }
+
+        #page .cmsmasters_social_icon_color.cmsmasters_social_icon_2:hover {
+            color: #3065b5;
+        }
+
+        .header_top {
+            height: 44px;
+        }
+
+        .header_mid {
+            height: 100px;
+        }
+
+        .header_bot {
+            height: 58px;
+        }
+
+        #page.cmsmasters_heading_after_header #middle,
+        #page.cmsmasters_heading_under_header #middle .headline .headline_outer {
+            padding-top: 100px;
+        }
+
+        #page.cmsmasters_heading_after_header.enable_header_top #middle,
+        #page.cmsmasters_heading_under_header.enable_header_top #middle .headline .headline_outer {
+            padding-top: 144px;
+        }
+
+        #page.cmsmasters_heading_after_header.enable_header_bottom #middle,
+        #page.cmsmasters_heading_under_header.enable_header_bottom #middle .headline .headline_outer {
+            padding-top: 158px;
+        }
+
+        #page.cmsmasters_heading_after_header.enable_header_top.enable_header_bottom #middle,
+        #page.cmsmasters_heading_under_header.enable_header_top.enable_header_bottom #middle .headline .headline_outer {
+            padding-top: 202px;
+        }
+
+        .mid_nav > li > a,
+        .bot_nav > li > a {
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+        }
+
+        @media only screen and (max-width: 1024px) {
+            .header_top,
+            .header_mid,
+            .header_bot {
+                height: auto;
+            }
+
+            .header_mid .header_mid_inner > div {
+                height: 100px;
+            }
+
+            .header_bot .header_bot_inner > div {
+                height: 58px;
+            }
+
+            #page.cmsmasters_heading_after_header #middle,
+            #page.cmsmasters_heading_under_header #middle .headline .headline_outer,
+            #page.cmsmasters_heading_after_header.enable_header_top #middle,
+            #page.cmsmasters_heading_under_header.enable_header_top #middle .headline .headline_outer,
+            #page.cmsmasters_heading_after_header.enable_header_bottom #middle,
+            #page.cmsmasters_heading_under_header.enable_header_bottom #middle .headline .headline_outer,
+            #page.cmsmasters_heading_after_header.enable_header_top.enable_header_bottom #middle,
+            #page.cmsmasters_heading_under_header.enable_header_top.enable_header_bottom #middle .headline .headline_outer {
+                padding-top: 0 !important;
+            }
+        }
+
+        @media only screen and (max-width: 540px) {
+            .header_mid .header_mid_inner > div,
+            .header_bot .header_bot_inner > div {
+                height: auto;
+            }
+        }
+
+        #page .cmsmasters_make_an_appointment .wpcf7-submit {
+            background-color: rgba(255, 255, 255, .0);
+            border-color: rgba(255, 255, 255, .3);
+        }
+
+        #page .cmsmasters_make_an_appointment .wpcf7-mail-sent-ok {
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 10px;
+            margin: 30px 0 0;
+            color: #ffffff;
+        }
+
+        #page .cmsmasters_make_an_appointment input:focus {
+            border-color: #ffffff;
+        }
+
+        #page .cmsmasters_make_an_appointment input,
+        #page .cmsmasters_make_an_appointment select {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, .2);
+            border-color: rgba(255, 255, 255, .5);
+        }
+
+        #page .cmsmasters_make_an_appointment input::-webkit-input-placeholder {
+            color: #ffffff;
+        }
+
+        #page .cmsmasters_make_an_appointment input:-moz-placeholder {
+            color: #ffffff;
+        }
+
+        #page .cmsmasters_make_an_appointment .wpcf7-submit:hover {
+            color: #3065b5;
+            background-color: #ffffff;
+            border: 1px solid #ffffff;
+        }
+
+        #page .cmsmasters_homepage_departments a:hover {
+            color: #ffffff;
+        }
+
+
+
+        .cmsmasters_homepage_info h6 {
+            color: #9a9a9a;
+        }
+
+
+        .widget_wysija > .widget {
+            padding: 0;
+        }
+
+        .widget_wysija .wysija-paragraph {
+            width: 390px;
+            max-width: 100%;
+            float: left;
+        }
+
+        #page .widget_wysija .wysija-paragraph input {
+            padding: 0 22px !important;
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, .2);
+            border-color: rgba(255, 255, 255, .5);
+        }
+
+        .widget_wysija .wysija-submit {
+            margin: 0 -1px !important;
+            border: 0px;
+            line-height: 44px;
+            color: #0392ce;
+            width: 170px;
+            max-width: 100%;
+        }
+
+        .widget_wysija .wysija-submit:hover {
+            color: #0392ce;
+            background-color: rgba(255, 255, 255, .9);
+        }
+
+        .cmsmasters_widget_departments .align-right {
+            float: right;
+            width: 50%;
+            text-align: right;
+        }
+
+        .cmsmasters_widget_departments span[class^="cmsmasters-icon-"]:before,
+        .cmsmasters_widget_departments span[class*=" cmsmasters-icon-"]:before {
+            margin: 0 10px 0 0;
+        }
+
+        .cmsmasters_homepage_fb_opening
+        .cmsmasters_widget_departments li,
+        .cmsmasters_homepage_sidebar_lists li {
+            display: block;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .2);
+        }
+
+        .cmsmasters_homepage_sidebar_lists li {
+            padding: 9px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .07);
+        }
+
+        .cmsmasters_widget_departments.cmsmasters_dep_list li {
+            padding: 9px 0;
+        }
+
+        .cmsmasters_homepage_fb_opening .cmsmasters_homepage_fb_opening_item {
+            float: right;
+            width: 50%;
+            text-align: right;
+        }
+
+        aside.widget_wysija {
+            padding: 20px 0 0px;
+        }
+
+        .widget_wysija .widgettitle {
+            display: none;
+        }
+
+        .cmsmasters_homepage_subscribe_sidebar input::-webkit-input-placeholder {
+            color: #ffffff;
+        }
+
+        .cmsmasters_homepage_subscribe_sidebar input:-moz-placeholder {
+            color: #ffffff;
+        }
+
+        /* Adaptive */
+        @media only screen and (max-width: 1440px) and (min-width: 950px) {
+            .cmsmasters_widget_departments .align-right {
+                display: block;
+                float: none;
+                width: 100%;
+                text-align: left;
+            }
+        }
+        .cmsmasters_clients_grid .cmsmasters_clients_item img {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    /* transform: scale(0.5); */
+    opacity: 1;
+}
+    </style>
+    <link rel='stylesheet' id='medical-clinic-adaptive-css'
+          href='http://euracare.com.gh/wp-content/themes/Euracare%20Ghana/theme-framework/css/adaptive.css?ver=1.0.0'
+          type='text/css' media='screen, print'/>
+    <link rel='stylesheet' id='medical-clinic-retina-css'
+          href='http://euracare.com.gh/wp-content/themes/Euracare%20Ghana/theme-framework/css/retina.css?ver=1.0.0'
+          type='text/css' media='screen'/>
+    <style id='medical-clinic-retina-inline-css' type='text/css'>
+        #cmsmasters_row_d1726270e4 .cmsmasters_row_outer_parent {
+            padding-top: 0px;
+        }
+
+        #cmsmasters_row_d1726270e4 .cmsmasters_row_outer_parent {
+            padding-bottom: 0px;
+        }
+
+        #cmsmasters_row_d1726270e4 .cmsmasters_row_inner.cmsmasters_row_fullwidth {
+            padding-left: 0%;
+        }
+
+        #cmsmasters_row_d1726270e4 .cmsmasters_row_inner.cmsmasters_row_fullwidth {
+            padding-right: 0%;
+        }
+
+        #cmsmasters_row_af79baad55 {
+            background-color: #fbfbfb;
+        }
+
+        #cmsmasters_row_af79baad55 .cmsmasters_row_outer_parent {
+            padding-top: 0px;
+        }
+
+        #cmsmasters_row_af79baad55 .cmsmasters_row_outer_parent {
+            padding-bottom: 90px;
+        }
+
+        #cmsmasters_icon_box_80afd0ed8c {
+            border-width: 0px;
+        }
+
+        #cmsmasters_icon_box_80afd0ed8c:before,
+        #cmsmasters_icon_box_80afd0ed8c .icon_box_heading:before {
+            font-size: 32px;
+            line-height: 22px;
+            width: 22px;
+            height: 22px;
+            border-width: 0px;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            color: #3eb8d7;
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+
+
+        #cmsmasters_heading_43c042c4d2 .cmsmasters_heading {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_43c042c4d2 .cmsmasters_heading, #cmsmasters_heading_43c042c4d2 .cmsmasters_heading a {
+            font-family: 'Open Sans';
+            font-size: 14px;
+            font-weight: normal;
+            font-style: normal;
+            color: rgba(58, 58, 58, 0.6);
+        }
+
+
+        #cmsmasters_heading_5902af1c7a .cmsmasters_heading {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_5902af1c7a .cmsmasters_heading, #cmsmasters_heading_5902af1c7a .cmsmasters_heading a {
+            font-family: 'Open Sans';
+            font-size: 20px;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        #cmsmasters_icon_box_60b6128a29:before,
+        #cmsmasters_icon_box_60b6128a29 .icon_box_heading:before {
+            font-size: 32px;
+            line-height: 22px;
+            width: 22px;
+            height: 22px;
+            border-width: 0px;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            color: #0392ce;
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        #cmsmasters_icon_box_60b6128a29.cmsmasters_icon_box_left,
+        #cmsmasters_icon_box_60b6128a29.cmsmasters_icon_box_left_top {
+            padding-left: 41px;
+            margin-left: 11px;
+        }
+
+        #cmsmasters_icon_box_60b6128a29.cmsmasters_icon_box_left:before,
+        #cmsmasters_icon_box_60b6128a29.cmsmasters_icon_box_left_top:before {
+            left: -11px;
+        }
+
+        #cmsmasters_icon_box_60b6128a29.cmsmasters_icon_box_left:before {
+            margin-top: -11px;
+        }
+
+        #cmsmasters_heading_48d9b2efe1 {
+            text-align: left;
+            margin-top: -3px;
+            margin-bottom: 0px;
+        }
+
+        #cmsmasters_heading_48d9b2efe1 .cmsmasters_heading {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_48d9b2efe1 .cmsmasters_heading, #cmsmasters_heading_48d9b2efe1 .cmsmasters_heading a {
+            font-family: 'Open Sans';
+            font-size: 14px;
+            font-weight: normal;
+            font-style: normal;
+            color: rgba(58, 58, 58, 0.6);
+        }
+
+        #cmsmasters_heading_48d9b2efe1 .cmsmasters_heading_divider {
+        }
+
+        #cmsmasters_heading_4c25ef0696 {
+            text-align: left;
+            margin-top: -20px;
+            margin-bottom: 0px;
+        }
+
+        #cmsmasters_heading_4c25ef0696 .cmsmasters_heading {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_4c25ef0696 .cmsmasters_heading, #cmsmasters_heading_4c25ef0696 .cmsmasters_heading a {
+            font-family: 'Open Sans';
+            font-size: 20px;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        #cmsmasters_heading_4c25ef0696 .cmsmasters_heading_divider {
+        }
+
+        #cmsmasters_icon_box_f7a107137b {
+            border-width: 0px;
+        }
+
+        #cmsmasters_icon_box_f7a107137b:before,
+        #cmsmasters_icon_box_f7a107137b .icon_box_heading:before {
+            font-size: 32px;
+            line-height: 22px;
+            width: 22px;
+            height: 22px;
+            border-width: 0px;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            color: #3065b5;
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        #cmsmasters_icon_box_f7a107137b.cmsmasters_icon_box_left,
+        #cmsmasters_icon_box_f7a107137b.cmsmasters_icon_box_left_top {
+            padding-left: 41px;
+            margin-left: 11px;
+        }
+
+        #cmsmasters_icon_box_f7a107137b.cmsmasters_icon_box_left:before,
+        #cmsmasters_icon_box_f7a107137b.cmsmasters_icon_box_left_top:before {
+            left: -11px;
+        }
+
+        #cmsmasters_icon_box_f7a107137b.cmsmasters_icon_box_left:before {
+            margin-top: -11px;
+        }
+
+        #cmsmasters_heading_53df6ac4ea {
+            text-align: left;
+            margin-top: -3px;
+            margin-bottom: 0px;
+        }
+
+        #cmsmasters_heading_53df6ac4ea .cmsmasters_heading {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_53df6ac4ea .cmsmasters_heading, #cmsmasters_heading_53df6ac4ea .cmsmasters_heading a {
+            font-family: 'Open Sans';
+            font-size: 14px;
+            font-weight: normal;
+            font-style: normal;
+            color: rgba(58, 58, 58, 0.6);
+        }
+
+        #cmsmasters_heading_53df6ac4ea .cmsmasters_heading_divider {
+        }
+
+        #cmsmasters_heading_96be5ae3fc {
+            text-align: left;
+            margin-top: -20px;
+            margin-bottom: 0px;
+        }
+
+        #cmsmasters_heading_96be5ae3fc .cmsmasters_heading {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_96be5ae3fc .cmsmasters_heading, #cmsmasters_heading_96be5ae3fc .cmsmasters_heading a {
+            font-family: 'Open Sans';
+            font-size: 20px;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        #cmsmasters_heading_96be5ae3fc .cmsmasters_heading_divider {
+        }
+
+        #cmsmasters_row_fdf66ae381 .cmsmasters_row_outer_parent {
+            padding-top: 0px;
+        }
+
+        #cmsmasters_row_fdf66ae381 .cmsmasters_row_outer_parent {
+            padding-bottom: 0px;
+        }
+
+        #cmsmasters_fb_0803565f5a {
+            padding-top: 0px;
+            padding-bottom: 0px;
+            background-color: #3eb8d7;
+        }
+
+        #cmsmasters_fb_0803565f5a .featured_block_inner {
+            width: 100%;
+            padding: 40px 40px 40px 40px;
+            text-align: left;
+            margin: 0 auto;
+        }
+
+        #cmsmasters_fb_0803565f5a .featured_block_text {
+            text-align: left;
+        }
+
+        #cmsmasters_button_058fad16f3 {
+            float: left;
+        }
+
+        #cmsmasters_button_058fad16f3 .cmsmasters_button:before {
+            margin-right: .5em;
+            margin-left: 0;
+            vertical-align: baseline;
+        }
+
+        #cmsmasters_button_058fad16f3 .cmsmasters_button {
+            font-weight: normal;
+            font-style: normal;
+            border-style: solid;
+            background-color: rgba(255, 255, 255, 0);
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+
+        #cmsmasters_button_058fad16f3 .cmsmasters_button:hover {
+            background-color: #ffffff;
+            color: #3eb8d7;
+            border-color: #ffffff;
+        }
+
+        #cmsmasters_fb_49ebbaf266 {
+            padding-top: 0px;
+            padding-bottom: 0px;
+            background-color: #0392ce;
+        }
+
+        #cmsmasters_fb_49ebbaf266 .featured_block_inner {
+            width: 100%;
+            padding: 40px 40px 40px 40px;
+            text-align: left;
+            margin: 0 auto;
+        }
+
+        #cmsmasters_fb_49ebbaf266 .featured_block_text {
+            text-align: left;
+        }
+
+        #cmsmasters_button_91a6f00a7a {
+            float: left;
+        }
+
+        #cmsmasters_button_91a6f00a7a .cmsmasters_button:before {
+            margin-right: .5em;
+            margin-left: 0;
+            vertical-align: baseline;
+        }
+
+        #cmsmasters_button_91a6f00a7a .cmsmasters_button {
+            font-weight: normal;
+            font-style: normal;
+            border-style: solid;
+            background-color: rgba(255, 255, 255, 0);
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+
+        #cmsmasters_button_91a6f00a7a .cmsmasters_button:hover {
+            background-color: #ffffff;
+            color: #0392ce;
+            border-color: #ffffff;
+        }
+
+        #cmsmasters_fb_4b9de15623 {
+            padding-top: 0px;
+            padding-bottom: 0px;
+            background-color: #3065b5;
+        }
+
+        #cmsmasters_fb_4b9de15623 .featured_block_inner {
+            width: 100%;
+            padding: 40px 40px 32px 40px;
+            text-align: left;
+            margin: 0 auto;
+        }
+
+        #cmsmasters_fb_4b9de15623 .featured_block_text {
+            text-align: left;
+        }
+
+        #cmsmasters_row_ .cmsmasters_row_outer_parent {
+            padding-top: 30px;
+        }
+
+        #cmsmasters_row_ .cmsmasters_row_outer_parent {
+            padding-bottom: 30px;
+        }
+
+        #cmsmasters_heading_ {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 20px;
+        }
+
+        #cmsmasters_heading_ .cmsmasters_heading {
+            text-align: left;
+            background-color: rgba(48, 101, 181, 0);
+            padding-left: 1em;
+            padding-right: 1em;
+        }
+
+        #cmsmasters_heading_ .cmsmasters_heading, #cmsmasters_heading_ .cmsmasters_heading a {
+            font-weight: normal;
+            font-style: normal;
+            color: #3065b5;
+        }
+
+        #cmsmasters_heading_ .cmsmasters_heading_divider {
+        }
+
+        #cmsmasters_row_enlpylsft .cmsmasters_row_outer_parent {
+            padding-top: 0px;
+        }
+
+        #cmsmasters_row_enlpylsft .cmsmasters_row_outer_parent {
+            padding-bottom: 0px;
+        }
+
+        #cmsmasters_divider_ {
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            padding-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        #cmsmasters_row_432d2d2894 {
+            background-color: #fcfcfc;
+        }
+
+        #cmsmasters_row_432d2d2894 .cmsmasters_row_outer_parent {
+            padding-top: 60px;
+        }
+
+        #cmsmasters_row_432d2d2894 .cmsmasters_row_outer_parent {
+            padding-bottom: 70px;
+        }
+
+        #cmsmasters_fb_1bd3305f4a {
+            padding-top: 0px;
+            padding-bottom: 0px;
+            background-color: rgba(48, 101, 181, 0);
+        }
+
+        #cmsmasters_fb_1bd3305f4a .featured_block_inner {
+            width: 100%;
+            padding: 35px 35px 35px 35px;
+            text-align: left;
+            margin: 0 auto;
+            background-color: #265fb4;
+        }
+
+        #cmsmasters_fb_1bd3305f4a .featured_block_text {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_cf3cd1880f {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 20px;
+        }
+
+        #cmsmasters_heading_cf3cd1880f .cmsmasters_heading {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_cf3cd1880f .cmsmasters_heading, #cmsmasters_heading_cf3cd1880f .cmsmasters_heading a {
+            font-size: 18px;
+            font-weight: normal;
+            font-style: normal;
+            color: #ffffff;
+        }
+
+        #cmsmasters_heading_cf3cd1880f .cmsmasters_heading_divider {
+        }
+
+        #cmsmasters_heading_8e3bd1217c {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        #cmsmasters_heading_8e3bd1217c .cmsmasters_heading {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_8e3bd1217c .cmsmasters_heading, #cmsmasters_heading_8e3bd1217c .cmsmasters_heading a {
+            font-size: 13px;
+            line-height: 32px;
+            font-weight: normal;
+            font-style: normal;
+            color: #b5cbed;
+        }
+
+        #cmsmasters_heading_8e3bd1217c .cmsmasters_heading_divider {
+        }
+
+        #cmsmasters_heading_74f7acaccf {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        #cmsmasters_heading_74f7acaccf .cmsmasters_heading {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_74f7acaccf .cmsmasters_heading, #cmsmasters_heading_74f7acaccf .cmsmasters_heading a {
+            font-size: 13px;
+            line-height: 32px;
+            font-weight: normal;
+            font-style: normal;
+            color: #b5cbed;
+        }
+
+        #cmsmasters_heading_74f7acaccf .cmsmasters_heading_divider {
+        }
+
+        #cmsmasters_heading_6fbf96dfbd {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        #cmsmasters_heading_6fbf96dfbd .cmsmasters_heading {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_6fbf96dfbd .cmsmasters_heading, #cmsmasters_heading_6fbf96dfbd .cmsmasters_heading a {
+            font-size: 13px;
+            line-height: 32px;
+            font-weight: normal;
+            font-style: normal;
+            color: #b5cbed;
+        }
+
+        #cmsmasters_heading_6fbf96dfbd .cmsmasters_heading_divider {
+        }
+
+        #cmsmasters_heading_10e89fe0fe {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        #cmsmasters_heading_10e89fe0fe .cmsmasters_heading {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_10e89fe0fe .cmsmasters_heading, #cmsmasters_heading_10e89fe0fe .cmsmasters_heading a {
+            font-size: 13px;
+            line-height: 32px;
+            font-weight: normal;
+            font-style: normal;
+            color: #b5cbed;
+        }
+
+        #cmsmasters_heading_10e89fe0fe .cmsmasters_heading_divider {
+        }
+
+        #cmsmasters_heading_e0cf8a5e8f {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        #cmsmasters_heading_e0cf8a5e8f .cmsmasters_heading {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_e0cf8a5e8f .cmsmasters_heading, #cmsmasters_heading_e0cf8a5e8f .cmsmasters_heading a {
+            font-size: 13px;
+            line-height: 32px;
+            font-weight: normal;
+            font-style: normal;
+            color: #b5cbed;
+        }
+
+        #cmsmasters_heading_e0cf8a5e8f .cmsmasters_heading_divider {
+        }
+
+        #cmsmasters_heading_e2f000411c {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        #cmsmasters_heading_e2f000411c .cmsmasters_heading {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_e2f000411c .cmsmasters_heading, #cmsmasters_heading_e2f000411c .cmsmasters_heading a {
+            font-size: 13px;
+            line-height: 32px;
+            font-weight: normal;
+            font-style: normal;
+            color: #b5cbed;
+        }
+
+        #cmsmasters_heading_e2f000411c .cmsmasters_heading_divider {
+        }
+
+        #cmsmasters_heading_e0cf8a5e8f {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        #cmsmasters_heading_e0cf8a5e8f .cmsmasters_heading {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_e0cf8a5e8f .cmsmasters_heading, #cmsmasters_heading_e0cf8a5e8f .cmsmasters_heading a {
+            font-size: 13px;
+            line-height: 32px;
+            font-weight: normal;
+            font-style: normal;
+            color: #b5cbed;
+        }
+
+        #cmsmasters_heading_e0cf8a5e8f .cmsmasters_heading_divider {
+        }
+
+        #cmsmasters_heading_e0cf8a5e8f {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        #cmsmasters_heading_e0cf8a5e8f .cmsmasters_heading {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_e0cf8a5e8f .cmsmasters_heading, #cmsmasters_heading_e0cf8a5e8f .cmsmasters_heading a {
+            font-size: 13px;
+            line-height: 32px;
+            font-weight: normal;
+            font-style: normal;
+            color: #b5cbed;
+        }
+
+        #cmsmasters_heading_e0cf8a5e8f .cmsmasters_heading_divider {
+        }
+
+        #cmsmasters_heading_e0cf8a5e8f {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        #cmsmasters_heading_e0cf8a5e8f .cmsmasters_heading {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_e0cf8a5e8f .cmsmasters_heading, #cmsmasters_heading_e0cf8a5e8f .cmsmasters_heading a {
+            font-size: 13px;
+            line-height: 32px;
+            font-weight: normal;
+            font-style: normal;
+            color: #b5cbed;
+        }
+
+        #cmsmasters_heading_e0cf8a5e8f .cmsmasters_heading_divider {
+        }
+
+        #cmsmasters_heading_e0cf8a5e8f {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        #cmsmasters_heading_e0cf8a5e8f .cmsmasters_heading {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_e0cf8a5e8f .cmsmasters_heading, #cmsmasters_heading_e0cf8a5e8f .cmsmasters_heading a {
+            font-size: 13px;
+            line-height: 32px;
+            font-weight: normal;
+            font-style: normal;
+            color: #b5cbed;
+        }
+
+        #cmsmasters_heading_e0cf8a5e8f .cmsmasters_heading_divider {
+        }
+
+        #cmsmasters_heading_e0cf8a5e8f {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        #cmsmasters_heading_e0cf8a5e8f .cmsmasters_heading {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_e0cf8a5e8f .cmsmasters_heading, #cmsmasters_heading_e0cf8a5e8f .cmsmasters_heading a {
+            font-size: 13px;
+            line-height: 32px;
+            font-weight: normal;
+            font-style: normal;
+            color: #b5cbed;
+        }
+
+        #cmsmasters_heading_e0cf8a5e8f .cmsmasters_heading_divider {
+        }
+
+        #cmsmasters_heading_ {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        #cmsmasters_heading_ .cmsmasters_heading {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_ .cmsmasters_heading, #cmsmasters_heading_ .cmsmasters_heading a {
+            font-size: 19px;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        #cmsmasters_heading_ .cmsmasters_heading_divider {
+        }
+
+        #cmsmasters_divider_ {
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            padding-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #cmsmasters_row_4bd700079e {
+            background-image: url(http://euracare.com.gh/wp-content/uploads/2017/05/About-banner.jpg);
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            position: static;
+        }
+
+        #cmsmasters_row_4bd700079e .cmsmasters_row_outer_parent {
+            padding-top: 60px;
+        }
+
+        #cmsmasters_row_4bd700079e .cmsmasters_row_outer_parent {
+            padding-bottom: 50px;
+        }
+
+        #cmsmasters_heading_d66325dcd9 {
+            text-align: center;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        #cmsmasters_heading_d66325dcd9 .cmsmasters_heading {
+            text-align: center;
+        }
+
+        #cmsmasters_heading_d66325dcd9 .cmsmasters_heading, #cmsmasters_heading_d66325dcd9 .cmsmasters_heading a {
+            font-size: 14px;
+            font-weight: normal;
+            font-style: normal;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        #cmsmasters_heading_d66325dcd9 .cmsmasters_heading_divider {
+        }
+
+        #cmsmasters_heading_6580655b86 {
+            text-align: center;
+            margin-top: 0px;
+            margin-bottom: 50px;
+        }
+
+        #cmsmasters_heading_6580655b86 .cmsmasters_heading {
+            text-align: center;
+        }
+
+        #cmsmasters_heading_6580655b86 .cmsmasters_heading, #cmsmasters_heading_6580655b86 .cmsmasters_heading a {
+            font-size: 24px;
+            font-weight: normal;
+            font-style: normal;
+            color: #ffffff;
+        }
+
+        #cmsmasters_heading_6580655b86 .cmsmasters_heading_divider {
+        }
+
+        #cmsmasters_quote_59e49f757f6d3 .cmsmasters_quote_inner_top {
+            background-color: #3eb8d7;
+        }
+
+        #cmsmasters_quote_59e49f757f6d3 .cmsmasters_quote_content:before {
+            color: #3eb8d7;
+        }
+
+        #cmsmasters_quote_59e49f75800c0 .cmsmasters_quote_inner_top {
+            background-color: #3eb8d7;
+        }
+
+        #cmsmasters_quote_59e49f75800c0 .cmsmasters_quote_content:before {
+            color: #3eb8d7;
+        }
+
+        #cmsmasters_quote_59e49f7580a7c .cmsmasters_quote_inner_top {
+            background-color: #3eb8d7;
+        }
+
+        #cmsmasters_quote_59e49f7580a7c .cmsmasters_quote_content:before {
+            color: #3eb8d7;
+        }
+
+        #cmsmasters_row_c0d7aa1b7e {
+            background-color: #fcfcfc;
+        }
+
+        #cmsmasters_row_c0d7aa1b7e .cmsmasters_row_outer_parent {
+            padding-top: 50px;
+        }
+
+        #cmsmasters_row_c0d7aa1b7e .cmsmasters_row_outer_parent {
+            padding-bottom: 40px;
+        }
+
+        #cmsmasters_heading_3002b2f182 {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 50px;
+        }
+
+        #cmsmasters_heading_3002b2f182 .cmsmasters_heading {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_3002b2f182 .cmsmasters_heading, #cmsmasters_heading_3002b2f182 .cmsmasters_heading a {
+            font-size: 24px;
+            font-weight: normal;
+            font-style: normal;
+            color: #232323;
+        }
+
+        #cmsmasters_heading_3002b2f182 .cmsmasters_heading_divider {
+        }
+
+        #cmsmasters_row_213c5da116 .cmsmasters_row_outer_parent {
+            padding-top: 0px;
+        }
+
+        #cmsmasters_row_213c5da116 .cmsmasters_row_outer_parent {
+            padding-bottom: 0px;
+        }
+
+        #cmsmasters_row_213c5da116 .cmsmasters_row_inner.cmsmasters_row_fullwidth {
+            padding-left: 0%;
+        }
+
+        #cmsmasters_row_213c5da116 .cmsmasters_row_inner.cmsmasters_row_fullwidth {
+            padding-right: 0%;
+        }
+
+        #cmsmasters_divider_e1923742ae {
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            padding-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        #cmsmasters_row_719ac06ae1 .cmsmasters_row_outer_parent {
+            padding-top: 0px;
+        }
+
+        #cmsmasters_row_719ac06ae1 .cmsmasters_row_outer_parent {
+            padding-bottom: 0px;
+        }
+
+        #cmsmasters_row_719ac06ae1 .cmsmasters_row_inner.cmsmasters_row_fullwidth {
+            padding-left: 0%;
+        }
+
+        #cmsmasters_row_719ac06ae1 .cmsmasters_row_inner.cmsmasters_row_fullwidth {
+            padding-right: 0%;
+        }
+
+        #cmsmasters_divider_72dfb26ddb {
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            padding-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        #cmsmasters_row_07e1e516eb {
+            background-color: #fcfcfc;
+        }
+
+        #cmsmasters_row_07e1e516eb .cmsmasters_row_outer_parent {
+            padding-top: 70px;
+        }
+
+        #cmsmasters_row_07e1e516eb .cmsmasters_row_outer_parent {
+            padding-bottom: 60px;
+        }
+
+        #cmsmasters_fb_62ffece280 {
+            padding-top: 0px;
+            padding-bottom: 0px;
+            background-color: #3065b5;
+        }
+
+        #cmsmasters_fb_62ffece280 .featured_block_inner {
+            width: 100%;
+            padding: 40px 35px 45px 35px;
+            text-align: left;
+            margin: 0 auto;
+        }
+
+        #cmsmasters_fb_62ffece280 .featured_block_text {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_8025c3b566 {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 48px;
+        }
+
+        #cmsmasters_heading_8025c3b566 .cmsmasters_heading {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_8025c3b566 .cmsmasters_heading, #cmsmasters_heading_8025c3b566 .cmsmasters_heading a {
+            font-size: 24px;
+            font-weight: normal;
+            font-style: normal;
+            color: #ffffff;
+        }
+
+        #cmsmasters_heading_8025c3b566 .cmsmasters_heading_divider {
+        }
+
+        #cmsmasters_heading_b295e546a1 {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 30px;
+        }
+
+        #cmsmasters_heading_b295e546a1 .cmsmasters_heading {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_b295e546a1 .cmsmasters_heading, #cmsmasters_heading_b295e546a1 .cmsmasters_heading a {
+            font-size: 24px;
+            font-weight: normal;
+            font-style: normal;
+            color: #232323;
+        }
+
+        #cmsmasters_heading_b295e546a1 .cmsmasters_heading_divider {
+        }
+
+        #cmsmasters_row_317627ff39 .cmsmasters_row_outer_parent {
+            padding-top: 0px;
+        }
+
+        #cmsmasters_row_317627ff39 .cmsmasters_row_outer_parent {
+            padding-bottom: 0px;
+        }
+
+        #cmsmasters_row_317627ff39 .cmsmasters_row_inner.cmsmasters_row_fullwidth {
+            padding-left: 0%;
+        }
+
+        #cmsmasters_row_317627ff39 .cmsmasters_row_inner.cmsmasters_row_fullwidth {
+            padding-right: 0%;
+        }
+
+        #cmsmasters_divider_c8c87b53b8 {
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            padding-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        #cmsmasters_row_qwfh1syey .cmsmasters_row_outer_parent {
+            padding-top: 30px;
+        }
+
+        #cmsmasters_row_qwfh1syey .cmsmasters_row_outer_parent {
+            padding-bottom: -30px;
+        }
+
+        #cmsmasters_heading_6881wzz9b {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: -20px;
+        }
+
+        #cmsmasters_heading_6881wzz9b .cmsmasters_heading {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_6881wzz9b .cmsmasters_heading, #cmsmasters_heading_6881wzz9b .cmsmasters_heading a {
+            font-size: 24px;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        #cmsmasters_heading_6881wzz9b .cmsmasters_heading_divider {
+        }
+
+        #cmsmasters_clients_ejssvogmn9 .cmsmasters_clients_item {
+            height: 160px;
+            line-height: 160px;
+        }
+
+        #cmsmasters_clients_ejssvogmn9 .cmsmasters_clients_item a {
+            line-height: 160px;
+        }
+
+        #cmsmasters_row_4399eb686a .cmsmasters_row_outer_parent {
+            padding-top: 30px;
+        }
+
+        #cmsmasters_row_4399eb686a .cmsmasters_row_outer_parent {
+            padding-bottom: -30px;
+        }
+
+        #cmsmasters_heading_c428c851a4 {
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: -20px;
+        }
+
+        #cmsmasters_heading_c428c851a4 .cmsmasters_heading {
+            text-align: left;
+        }
+
+        #cmsmasters_heading_c428c851a4 .cmsmasters_heading, #cmsmasters_heading_c428c851a4 .cmsmasters_heading a {
+            font-size: 24px;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        #cmsmasters_heading_c428c851a4 .cmsmasters_heading_divider {
+        }
+
+        #cmsmasters_clients_7399a53dc3 .cmsmasters_clients_item {
+            height: 160px;
+            line-height: 160px;
+        }
+
+        #cmsmasters_clients_7399a53dc3 .cmsmasters_clients_item a {
+            line-height: 160px;
+        }
+
+        <
+        style >
+        .intl-tel-input {
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        span.required-text {
+            color: red;
+            font-size: 200%;
+            vertical-align: text-top;
+            line-height: 50%;
+        }
+
+        select {
+            width: 100% !important;
+        }
+
+        .wizard .bottom-actions .btn-next, .wizard .bottom-actions .btn-prev {
+            margin: 10px;
+            background-color: #3065b5;
+            color: whitesmoke;
+        }
+
+        .btn-success {
+            background-color: #3065b5 !important;
+
+        }
+
+        .btn-info {
+            color: #fff;
+            background-color: #3065b5;
+        }
+
+        input[type="submit"], input[type="reset"], input[type="button"], button, .button {
+            background-color: #3065b5;
+        }
+
+        .wizard .btn-next, .wizard .btn-prev {
+            white-space: nowrap;
+            background-color: #3065b5;
+        }
+
+        #contactForm {
+            background-color: #fff;
+            padding: 10px;
+            border: solid 1px;
+        }
+
+        {#    </style>#}
+        {##}
+        {##}
+        {#  #}
+        {##}
+        {##}
+        {#    {% block styles %} {% endblock %}#}
+        {#    <style>#}
+        .navbar-default {
+            background: #3065b5;
+            border-bottom: 2px solid #3065b5;
+            margin: 0px;
+            padding: 12px 0;
+        }
+
+        .collapse-colored-col .panel-heading {
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            -ms-border-radius: 0px;
+            border-radius: 0px;
+            background: #3065b5;
+            padding: 5px 15px;
+        }
+
+        .collapse-colored-col .panel, .collapse-colored-col .panel-default {
+            border: 0px;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            -ms-border-radius: 0px;
+            border-radius: 0px;
+            background-color: #3065b5;
+            color: #fff;
+        }
+
+        .ads-section {
+            background: #0392ce;
+        }
+
+        .header_mid .header_mid_inner .logo_wrap {
+            width: 300px;
+        }
+
+        .header_mid .logo_wrap .logo {
+            display: inline-block;
+            width: auto;
+            vertical-align: middle;
+        }
+
+        .header_mid .logo_wrap {
+            height: 100%;
+            position: relative;
+            float: left;
+        }
+
+        .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+            color: #fff;
+            background-color: transparent;
+        }
+
+        .navbar-default .navbar-nav > li > a {
+            color: #fff;
+            text-transform: capitalize;
+            font-weight: 400;
+            font-size: 15px;
+        }
+
+        .testimonials {
+            padding: 60px 0;
+            background-color: #0392ce;
+            overflow: hidden;
+        }
+
+        .know-more {
+            padding: 60px 0;
+            background-color: #4575bd;
+            overflow: hidden;
+        }
+
+        .center-title h2 {
+            text-transform: capitalize;
+            letter-spacing: -1px;
+            font-weight: 300;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+<!-- Static navbar -->
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="header_mid">
+            <div class="logo_wrap">
+                <a class="logo" href="#"><img src="/static/img/logo-euracare-.png" width="170" height="56.5"
+                                              alt="Euracare"></a>
+            </div>
+
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">About Us<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'test_printer' %}">Test Printer</a></li>
+                        <li><a href="">Our Hisrory</a></li>
+                        <li><a href="">Our Leadership</a></li>
+                        <li><a href="">Press about us</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="">Our Team</a></li>
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Services <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Cancer Center</a></li>
+                        <li><a href="">Rehabilitation Center</a></li>
+                        <li><a href="">Gastro Labs</a></li>
+                        <li><a href="">Emergency Room</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="{% url 'register_me' %}">Register</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<!-- bootstrap carousel -->
+
+<div id="carousel-header" class="carousel slide" data-ride="carousel" data-interval="5000">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-header" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-header" data-slide-to="1"></li>
+        <li data-target="#carousel-header" data-slide-to="2"></li>
+    </ol>
+</div>
+{% include 'htmltags/contact.html' %}
+
+{% block content %}
+
+{% endblock %}
+
+
+
+
+<div id="cmsmasters_row_317627ff39"
+     class="cmsmasters_row cmsmasters_color_scheme_default cmsmasters_row_top_default cmsmasters_row_bot_default cmsmasters_row_fullwidth">
+    <div class="cmsmasters_row_outer_parent">
+        <div class="cmsmasters_row_outer">
+            <div class="cmsmasters_row_inner cmsmasters_row_fullwidth">
+                <div class="cmsmasters_row_margin">
+                    <div class="cmsmasters_column one_first">
+                        <div id="cmsmasters_divider_c8c87b53b8"
+                             class="cmsmasters_divider cmsmasters_divider_width_long cmsmasters_divider_pos_center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="cmsmasters_row_qwfh1syey"
+     class="cmsmasters_row cmsmasters_color_scheme_default cmsmasters_row_top_default cmsmasters_row_bot_default cmsmasters_row_boxed">
+    <div class="cmsmasters_row_outer_parent">
+        <div class="cmsmasters_row_outer">
+            <div class="cmsmasters_row_inner">
+                <div class="cmsmasters_row_margin">
+                    <div class="cmsmasters_column one_first">
+                        <div id="cmsmasters_heading_6881wzz9b"
+                             class="cmsmasters_heading_wrap cmsmasters_heading_align_left">
+                            <h1 class="cmsmasters_heading">They Trust Us</h1>
+                        </div>
+                        <div class="cmsmasters_clients_grid_wrap">
+                            <div id="cmsmasters_clients_ejssvogmn9" class="cmsmasters_clients_grid clients_five">
+                                <div class="cmsmasters_clients_items slides">
+                                    <div class="cmsmasters_clients_item item"><img
+                                            src="http://euracare.com.gh/wp-content/uploads/2017/05/logoo-b-1.jpg"
+                                            alt="logoo-b" title="logoo-b"/></div>
+                                    <div class="cmsmasters_clients_item item"><img
+                                            src="http://euracare.com.gh/wp-content/uploads/2017/05/logo-c-1.jpg"
+                                            alt="logo-c" title="logo-c"/></div>
+                                    <div class="cmsmasters_clients_item item"><img
+                                            src="http://euracare.com.gh/wp-content/uploads/2017/07/logo-2-toyo-1.png"
+                                            alt="logo-a-1" title="logo-a-1"/></div>
+                                    <div class="cmsmasters_clients_item item"><img
+                                            src="http://euracare.com.gh/wp-content/uploads/2017/05/SIEMENS-HEALTH-INEERS-LOGO-copy.jpg"
+                                            alt="SIEMENS-HEALTH-INEERS-LOGO copy"
+                                            title="SIEMENS-HEALTH-INEERS-LOGO copy"/></div>
+                                    <div class="cmsmasters_clients_item item"><img
+                                            src="http://euracare.com.gh/wp-content/uploads/2017/10/tiecarelogo.jpg"
+                                            alt="tiecarelogo" title="tiecarelogo"/></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="cmsmasters_row_4399eb686a"
+     class="cmsmasters_row cmsmasters_color_scheme_default cmsmasters_row_top_default cmsmasters_row_bot_default cmsmasters_row_boxed">
+    <div class="cmsmasters_row_outer_parent">
+        <div class="cmsmasters_row_outer">
+            <div class="cmsmasters_row_inner">
+                <div class="cmsmasters_row_margin">
+                    <div class="cmsmasters_column one_first">
+                        <div id="cmsmasters_heading_c428c851a4"
+                             class="cmsmasters_heading_wrap cmsmasters_heading_align_left">
+                            <h1 class="cmsmasters_heading">Partners</h1>
+                        </div>
+                        <div class="cmsmasters_clients_grid_wrap">
+                            <div id="cmsmasters_clients_7399a53dc3" class="cmsmasters_clients_grid clients_five">
+                                <div class="cmsmasters_clients_items slides">
+                                    <div class="cmsmasters_clients_item item"><img
+                                            src="http://euracare.com.gh/wp-content/uploads/2017/05/3-1.png"
+                                            alt="SIEMENS" title="SIEMENS"/></div>
+                                    <div class="cmsmasters_clients_item item"><img
+                                            src="http://euracare.com.gh/wp-content/uploads/2017/05/4.png" alt="ZEISS"
+                                            title="ZEISS"/></div>
+                                    <div class="cmsmasters_clients_item item"><img
+                                            src="http://euracare.com.gh/wp-content/uploads/2017/09/1.png" alt="JNCI"
+                                            title="JNCI"/></div>
+                                    <div class="cmsmasters_clients_item item"><img
+                                            src="http://euracare.com.gh/wp-content/uploads/2017/05/logob.jpg"
+                                            alt="logob" title="logob"/></div>
+                                    <div class="cmsmasters_clients_item item"><img
+                                            src="http://euracare.com.gh/wp-content/uploads/2017/05/SIEMENS-HEALTH-INEERS-LOGO.jpg"
+                                            alt="SIEMENS-HEALTH-INEERS-LOGO" title="SIEMENS-HEALTH-INEERS-LOGO"/></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="cl"></div>
+<div class="content_wrap fullwidth">
+    <div class="middle_content entry"></div>
+
+    <div id="bottom" class="cmsmasters_color_scheme_footer">
+        <div class="bottom_bg">
+            <div class="bottom_outer">
+                <div class="bottom_inner sidebar_layout_14141414">
+                    <aside id="custom-contact-info-7" class="widget widget_custom_contact_info_entries"><h3
+                            class="widgettitle">Euracare Ghana</h3>
+                        <div class="adr adress_wrap cmsmasters_theme_icon_user_address"><span
+                                class="street-address contact_widget_address">24 Peter Ala Adjetey Ave</span><span
+                                class="locality contact_widget_city">P.O. Box CT 1235</span><span
+                                class="region contact_widget_state">North Labone</span><span
+                                class="postal-code contact_widget_zip"> Accra, Ghana</span></div>
+                        <span class="contact_widget_url cmsmasters_theme_icon_user_website"><a class="url"
+                                                                                               href="http://euracare.com.gh">http://euracare.com.gh</a></span><span
+                                class="contact_widget_email cmsmasters_theme_icon_user_mail"><a class="email"
+                                                                                                href="mailto:&#105;n&#102;&#111;&#64;%65&#117;ra&#99;%61&#114;&#101;&#46;&#99;o%6d%2eg&#104;">&#105;nf&#111;&#64;eu&#114;a&#99;&#97;&#114;&#101;&#46;&#99;&#111;m&#46;g&#104;</a></span><span
+                                class="contact_widget_phone cmsmasters_theme_icon_user_phone"><span class="tel">+233 (0) 500 809 024</span></span>
+                    </aside>
+                    <aside id="text-8" class="widget widget_text">
+                        <div class="textwidget"></div>
+                    </aside>
+                    <aside id="custom-contact-info-8" class="widget widget_custom_contact_info_entries"><h3
+                            class="widgettitle">Euracare Nigeria</h3>
+                        <div class="adr adress_wrap cmsmasters_theme_icon_user_address"><span
+                                class="street-address contact_widget_address"> 293 Younis Bashorun Street cnr Jide Oki Street, Victoria Island</span><span
+                                class="locality contact_widget_city">Lagos, Nigeria</span></div>
+                        <span class="contact_widget_url cmsmasters_theme_icon_user_website"><a class="url"
+                                                                                               href="http://www.euracare.com.ng">http://www.euracare.com.ng</a></span><span
+                                class="contact_widget_email cmsmasters_theme_icon_user_mail"><a class="email"
+                                                                                                href="mailto:inf%6f&#64;e&#117;&#114;ac&#97;%72&#101;&#46;&#99;&#111;%6d%2en%67">&#105;nf&#111;&#64;e&#117;r&#97;c&#97;&#114;&#101;.co&#109;.&#110;g</a></span><span
+                                class="contact_widget_phone cmsmasters_theme_icon_user_phone"><span class="tel">+234 (0) 700 3872 2273</span></span>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer class="footer">
+        <div class="divide40"></div>
+        <div class="footer-copyright">
+            <div class="container">
+                <span>Internet Experts Limited &copy; 2017 | All Rights Reserved</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="/static/jquery.min.js"></script>
+    <script src="/static/js/jquery.wizard.js"></script>
+    <script src="/static/bootstrap.min.js"></script>
+    <script src="/static/js/jquery-ui.js"></script>
+    <script src="/static/jquery.flexslider-min.js" type="text/javascript"></script>
+    <script src="/static/jquery.stellar.min.js" type="text/javascript"></script>
+    <script src="/static/jquery.magnific-popup.min.js" type="text/javascript"></script>
+    <script src="/static/wow.min.js" type="text/javascript"></script>
+    <script src="/static/custom.js" type="text/javascript"></script>
+    <script src="/static/plugins/bower_components/sweetalert/sweetalert.min.js"></script>
+    <script src="static/plugins/bower_components/sweetalert/jquery.sweet-alert.custom.js"></script>
+    <script src="/static/js/utils.js"></script>
+
+    <script src="/static/assets/js/skel.min.js"></script>
+    <script src="/static/assets/js/util.js"></script>
+    <script src="/static/assets/js/main.js"></script>
+
+    <script src="/static/js/formSerializer.js"></script>
+    <script src="/static/js/lodash.js"></script>
+    <script src="/static/js/select2.full.js" type="text/javascript"></script>
+    <script src="/static/js/intlTelInput.js"></script>
+    <script src="/static/datetimepicker-master/jquery.datetimepicker.js"></script>
+    {#<script src="/static/js/DYMO.Label.Framework.latest.js"></script>#}
+    <script src="http://labelwriter.com/software/dls/sdk/js/DYMO.Label.Framework.latest.js"></script>
+
+    {% block scripts %}{% endblock %}
+    <!-- Javascript -->
+
+    <script type="application/javascript">
+        var districts = [];
+        var lgas = [];
+        var addContact = function () {
+            if ($('#contactForm [name="type"]').val() !== " ") {
+                var exten = $("#patient_phones").intlTelInput("getSelectedCountryData");
+                var country_name = exten.name;
+                $("#nation_id").val(country_name);
+                if ($("#patient_phones").intlTelInput('isValidNumber')) {
+                    var int_no = $("#patient_phones").intlTelInput("getNumber", intlTelInputUtils.numberFormat.INTERNATIONAL)
+                    var vars = $('#patientContacts').val();
+                    var oldPhones = vars !== '' ? JSON.parse(vars) : [];
+
+                    var phones = $('#contactForm').serializeObject();
+                    oldPhones.push(phones);
+                    $('#patientContacts').val(JSON.stringify(oldPhones));
+                    $('#contactForm')[0].reset();
+                    $('#contactForm [name="nation_id"]').val("");
+                    var init = $('#contactForm [name="type"] option:first-child').attr('value');
+                    $('#contactForm [name="type"]').val(init);
+                    $('[name="primary"]');
+                    var vals = [];
+                    _.each(oldPhones, function (obj) {
+                        vals.push(int_no + (obj.primary && obj.primary == "on" ? ' *Primary' : ''));
+                    });
+                    $('#phonen').val(vals.join(', '));
+                    var display = $("#show_phone").val()
+                    if (display == '') {
+                        $("#show_phone").val(int_no);
+                    } else {
+                        $("#show_phone").val($("#show_phone").val() + "," + int_no)
+                    }
+
+                } else {
+                    swal({
+                        title: "Invalid!",
+                        text: "The number your typed is not correct",
+                    });
+                }
+
+            } else {
+                swal({
+                    title: "Incomplete!",
+                    text: "Your form is not completely filled",
+                });
+            }
+        }
+        var now = new Date().toISOString().split('T')[0];
+        $(document).ready(function () {
+            $(".reset_phone").click(function () {
+                $("#show_phone").val("");
+                $("#patientContacts").val("");
+            })
+
+            $("#id_res_lga").select2({
+                placeholder: 'select LGA',
+                allowClear: true,
+                width: '100%',
+                data: [],
+                templateResult: function (result) {
+                    return result.text;
+                },
+                templateSelection: function (selection) {
+                    return selection.text;
+                }
+            });
+
+            $("#id_res_dist").select2({
+                placeholder: 'select district',
+                allowClear: true,
+                width: '100%',
+                data: [],
+                templateResult: function (result) {
+                    return result.text;
+                },
+                templateSelection: function (selection) {
+                    return selection.text;
+                }
+            });
+
+            $("#id_country").select2({
+                placeholder: 'Select country',
+                allowClear: true,
+                width: '100%'
+            });
+
+            $("#id_religion").select2({
+                placeholder: 'select religion',
+                allowClear: true,
+                width: '100%'
+            });
+
+            $("#id_blood_group").select2({
+                placeholder: 'select blood group',
+                allowClear: true,
+                width: '100%'
+            });
+
+            $("#id_genotype").select2({
+                placeholder: 'select genotype',
+                allowClear: true,
+                width: '100%'
+            });
+
+
+            $("#id_district").select2({
+                placeholder: 'select district',
+                allowClear: true,
+                width: '100%'
+            });
+
+            $("#id_res_state").select2({
+                placeholder: 'select state',
+                allowClear: true,
+                width: '100%'
+            }).change(function () {
+                var state_id = $(this).val();
+                var resDistEle = $('#id_res_dist');
+                var resLgaEle = $('#id_res_lga');
+                if (state_id != "") {
+                    $.ajax({
+                        url: '{% url 'district' %}',
+                        type: 'GET',
+                        data: 'state_id=' + state_id,
+                        dataType: 'json',
+                        beforeSend: function () {
+                        },
+                        complete: function (x) {
+                            var originOptions = resDistEle.data('select2').options.options;
+                            resDistEle.empty().select2($.extend(originOptions, {data: x.responseJSON}));
+                        }
+                    });
+
+                    $.ajax({
+                        url: '{% url 'lgas'%}',
+                        type: 'GET',
+                        data: 'state_id=' + state_id,
+                        dataType: 'json',
+                        beforeSend: function () {
+                        },
+                        complete: function (x) {
+                            lgas = x.responseJSON;
+                            var origOptions = resLgaEle.data('select2').options.options;
+                            resLgaEle.empty().select2($.extend(origOptions, {data: lgas}));
+                        }
+                    });
+                }
+            });
+
+            $("#id_state").select2({
+                placeholder: 'Select your state',
+                allowClear: true,
+                width: '100%'
+            }).change(function () {
+                var state_id = $(this).val();
+                var districtEle = $('#id_district_id');
+                var lgaEle = $('#id_lga');
+                if (state_id != "") {
+                    $.ajax({
+                        url: '{% url 'district' %}',
+                        type: 'GET',
+                        data: "state_id=" + state_id,
+                        dataType: 'json',
+                        beforeSend: function () {
+                        },
+                        complete: function (d) {
+                            var origOptions = districtEle.data('select2').options.options;
+                            districtEle.empty().select2($.extend(origOptions, {data: d.responseJSON}));
+                        }
+                    });
+
+                    $.ajax({
+                        url: '{% url 'lgas' %}',
+                        type: 'GET',
+                        data: "state_id=" + state_id,
+                        dataType: 'json',
+                        beforeSend: function () {
+                        },
+                        complete: function (d) {
+                            lgas = d.responseJSON;
+                            var origOptions = lgaEle.data('select2').options.options;
+                            lgaEle.empty().select2($.extend(origOptions, {data: lgas}));
+
+                        }
+                    });
+                }
+            });
+
+
+            $("#id_lga").select2({
+                placeholder: 'Select your LGA',
+                allowClear: true,
+                width: '100%',
+                data: [],
+                templateResult: function (result) {
+                    return result.text;
+                },
+                templateSelection: function (selection) {
+                    return selection.text;
+                }
+            });
+
+            $("#id_title").select2({
+                placeholder: 'select salutations',
+                allowClear: true,
+                multiple: true,
+                width: '100%',
+
+            });
+
+
+            $("#id_title").on("select2:select", function (evt) {
+                var element = evt.params.data.element;
+                var $element = $(element);
+
+                $element.detach();
+                $(this).append($element);
+                $(this).trigger("change");
+            });
+
+            $("#id_district_id").select2({
+                placeholder: 'Select your district',
+                allowClear: true,
+                width: '100%',
+                data: districts,
+                templateResult: function (result) {
+                    return result.text;
+                },
+                templateSelection: function (selection) {
+                    return selection.text;
+                }
+            });
+
+            $("#id_sex").select2({
+                placeholder: 'Select your gender',
+                allowClear: true,
+                width: '100%'
+            });
+
+            $("#id_industry").select2({
+                placeholder: 'Select your work place',
+                allowClear: true,
+                width: '100%'
+            });
+
+            $('#id_date_of_birth').datetimepicker({
+                format: 'Y-m-d',
+                formatDate: 'Y-m-d',
+                timepicker: false,
+                allowclear: true,
+                onShow: function (ct) {
+                    this.setOptions({
+                        maxDate: 0
+                    });
+                },
+            });
+
+
+            $("#id_geno_type").select2({
+                placeholder: 'Select your genotype',
+                allowClear: true,
+                width: '100%'
+            });
+
+            $("#id_relationship").select2({
+                placeholder: 'Select your next of kin relationship',
+                allowClear: true,
+                width: '100%'
+
+            });
+            $("#id_type").select2({
+                placeholder: "Select type",
+                allowClear: true,
+                width: '100%'
+            });
+
+
+            $(".finished-text").click(function () {
+                var phon = $('input[name="show_phone"]').val();
+                if (phon !== "") {
+                    var data = $('.createForm').serialize();
+                    $.ajax({
+                        type: 'POST',
+                        url: "{% url 'register_me' %}",
+                        data: data,
+                        dataType: 'json',
+                        beforeSend: function () {
+                        },
+                        complete: function (d) {
+                            if (d.responseText == 'success') {
+                                swal("Good job!", "Please proceed to the hospital front desk and complete your enrollment.", "success");
+                                setTimeout(function () {
+                                    location.href = '{% url 'home' %}';
+
+                                }, 4000);
+
+                            } else {
+                                swal({
+                                    title: "error!",
+                                    text: "Please cross check and make sure you fill your contact",
+                                });
+
+                            }
+
+                        }
+                    });
+                } else {
+                    swal({
+                        title: "error!",
+                        text: "Please cross check and make sure you fill your contact",
+                    });
+
+                }
+
+            });
+
+            $("#patient_phones").intlTelInput();
+
+
+            $("#id_next_kin_phone").intlTelInput();
+
+            $("#show_phone").click(function () {
+                dialog.dialog("open");
+            })
+
+            dialog = $("#contactForm").dialog({
+                autoOpen: false,
+                height: 500,
+                width: 400,
+                modal: true,
+                close: function () {
+                    $('#contactForm')[0].reset();
+                }
+            });
+
+        });
+    </script>
+{#    <script language=JavaScript>#}
+{#        <!--#}
+{##}
+{#        //Disable right mouse click Script#}
+{##}
+{#        var message = "Function Disabled!";#}
+{##}
+{#        ///////////////////////////////////#}
+{#        function clickIE4() {#}
+{#            if (event.button == 2) {#}
+{#                return false;#}
+{#            }#}
+{#        }#}
+{##}
+{#        function clickNS4(e) {#}
+{#            if (document.layers || document.getElementById && !document.all) {#}
+{#                if (e.which == 2 || e.which == 3) {#}
+{#                    return false;#}
+{#                }#}
+{#            }#}
+{#        }#}
+{##}
+{#        if (document.layers) {#}
+{#            document.captureEvents(Event.MOUSEDOWN);#}
+{#            document.onmousedown = clickNS4;#}
+{#        }#}
+{#        else if (document.all && !document.getElementById) {#}
+{#            document.onmousedown = clickIE4;#}
+{#        }#}
+{##}
+{#        document.oncontextmenu = new Function("return false")#}
+{##}
+{#        // -->#}
+{#    </script>#}
+
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Page not found at /api/vendor/</title>
+  <meta name="robots" content="NONE,NOARCHIVE">
+  <style type="text/css">
+    html * { padding:0; margin:0; }
+    body * { padding:10px 20px; }
+    body * * { padding:0; }
+    body { font:small sans-serif; background:#eee; color:#000; }
+    body>div { border-bottom:1px solid #ddd; }
+    h1 { font-weight:normal; margin-bottom:.4em; }
+    h1 span { font-size:60%; color:#666; font-weight:normal; }
+    table { border:none; border-collapse: collapse; width:100%; }
+    td, th { vertical-align:top; padding:2px 3px; }
+    th { width:12em; text-align:right; color:#666; padding-right:.5em; }
+    #info { background:#f6f6f6; }
+    #info ol { margin: 0.5em 4em; }
+    #info ol li { font-family: monospace; }
+    #summary { background: #ffc; }
+    #explanation { background:#eee; border-bottom: 0px none; }
+  </style>
+</head>
+<body>
+  <div id="summary">
+    <h1>Page not found <span>(404)</span></h1>
+    <table class="meta">
+      <tbody><tr>
+        <th>Request Method:</th>
+        <td>GET</td>
+      </tr>
+      <tr>
+        <th>Request URL:</th>
+        <td>http://localhost:8000/api/vendor/</td>
+      </tr>
+      
+    </tbody></table>
+  </div>
+  <div id="info">
+    
+      <p>
+      Using the URLconf defined in <code>django_medicplus.urls</code>,
+      Django tried these URL patterns, in this order:
+      </p>
+      <ol>
+        
+          <li>
+            
+                admin/
+                
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                api/
+                
+            
+                ^vendor$
+                [name='api_vendor-list']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                api/
+                
+            
+                ^vendor\.(?P&lt;format&gt;[a-z0-9]+)/?$
+                [name='api_vendor-list']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                api/
+                
+            
+                ^vendor/(?P&lt;pk&gt;[^/.]+)$
+                [name='api_vendor-detail']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                api/
+                
+            
+                ^vendor/(?P&lt;pk&gt;[^/.]+)\.(?P&lt;format&gt;[a-z0-9]+)/?$
+                [name='api_vendor-detail']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                api/
+                
+            
+                ^drug_lot$
+                [name='api_drug_lot-list']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                api/
+                
+            
+                ^drug_lot\.(?P&lt;format&gt;[a-z0-9]+)/?$
+                [name='api_drug_lot-list']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                api/
+                
+            
+                ^drug_lot/(?P&lt;pk&gt;[^/.]+)$
+                [name='api_drug_lot-detail']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                api/
+                
+            
+                ^drug_lot/(?P&lt;pk&gt;[^/.]+)\.(?P&lt;format&gt;[a-z0-9]+)/?$
+                [name='api_drug_lot-detail']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                api/
+                
+            
+                ^stock_receipt$
+                [name='api_stock_receipt-list']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                api/
+                
+            
+                ^stock_receipt\.(?P&lt;format&gt;[a-z0-9]+)/?$
+                [name='api_stock_receipt-list']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                api/
+                
+            
+                ^stock_receipt/(?P&lt;pk&gt;[^/.]+)$
+                [name='api_stock_receipt-detail']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                api/
+                
+            
+                ^stock_receipt/(?P&lt;pk&gt;[^/.]+)\.(?P&lt;format&gt;[a-z0-9]+)/?$
+                [name='api_stock_receipt-detail']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                api/
+                
+            
+                ^stock_receipt_line$
+                [name='api_stock_receipt_line-list']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                api/
+                
+            
+                ^stock_receipt_line\.(?P&lt;format&gt;[a-z0-9]+)/?$
+                [name='api_stock_receipt_line-list']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                api/
+                
+            
+                ^stock_receipt_line/(?P&lt;pk&gt;[^/.]+)$
+                [name='api_stock_receipt_line-detail']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                api/
+                
+            
+                ^stock_receipt_line/(?P&lt;pk&gt;[^/.]+)\.(?P&lt;format&gt;[a-z0-9]+)/?$
+                [name='api_stock_receipt_line-detail']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                api/
+                
+            
+                ^drug_receipt$
+                [name='api_drug_receipt-list']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                api/
+                
+            
+                ^drug_receipt\.(?P&lt;format&gt;[a-z0-9]+)/?$
+                [name='api_drug_receipt-list']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                api/
+                
+            
+                ^drug_receipt/(?P&lt;pk&gt;[^/.]+)$
+                [name='api_drug_receipt-detail']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                api/
+                
+            
+                ^drug_receipt/(?P&lt;pk&gt;[^/.]+)\.(?P&lt;format&gt;[a-z0-9]+)/?$
+                [name='api_drug_receipt-detail']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                api/
+                
+            
+                ^$
+                [name='api-root']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                api/
+                
+            
+                ^\.(?P&lt;format&gt;[a-z0-9]+)/?$
+                [name='api-root']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                
+                [name='stock_received']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                returns/
+                [name='returns']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                vendor/
+                [name='vendor']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                drug_lot/
+                [name='drug_lot']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                create_receipt/
+                [name='create_receipt']
+            
+          </li>
+        
+          <li>
+            
+                
+                
+            
+                return_drug/
+                [name='return_drug']
+            
+          </li>
+        
+          <li>
+            
+                login
+                [name='login']
+            
+          </li>
+        
+          <li>
+            
+                logout/
+                [name='logout']
+            
+          </li>
+        
+      </ol>
+      <p>
+        
+        The current path, <code>api/vendor/</code>, didn't match any of these.
+      </p>
+    
+  </div>
+
+  <div id="explanation">
+    <p>
+      You're seeing this error because you have <code>DEBUG = True</code> in
+      your Django settings file. Change that to <code>False</code>, and Django
+      will display a standard 404 page.
+    </p>
+  </div>
+
+
+</body></html>

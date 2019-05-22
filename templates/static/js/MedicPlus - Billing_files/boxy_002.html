@@ -1,0 +1,134 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style>
+    .mini{
+        height: 37px;
+        border-radius: 2px !important;
+        font-size: 16px;
+        color: #0a0a0a;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        vertical-align: bottom;
+        white-space: nowrap;
+        text-rendering: auto;
+        font-weight: 600!important;
+
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        font-family: medium-content-sans-serif-font,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+
+    }
+
+</style>
+
+</head><body><section style="width: 900px" id="row-fluid">
+   <label>Reconcile Claim With a payment lines</label>
+    <hr class="border">
+    <form method="post" id="claimPaymentForm" action="/billing/boxy.claim_bill_reconcile.php?id=3&amp;pid=00000000108&amp;_=1530099418415" onsubmit="return AIM.submit(this, {onComplete: save})" style="margin-top: 20px;">
+            <input name="claim_amount" value="9" type="hidden">
+        <div class="row-fluid">
+            <label class="span5">Account  For Payment</label>
+            <label class="span2"></label>
+            <label class="span5">Payable Information</label>
+        </div>
+        <div class="row-fluid">
+            <div class="span5">
+                <table id="claim_lines" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Desc</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>*</th>
+                    </tr>
+                    </thead>
+                                            <tbody><tr>
+                            <td class="amoun"><input title="Select" name="line_ids[]" value="00000004171" data-m="58909" type="checkbox"></td>
+                            <td nowrap="nowrap">Cash payment</td>
+                            <td class="amount">58909</td>
+                            <td></td>
+                            <td><input name="b_amount[]" value="0" readonly="readonly" style="width: 50px;" type="number"></td>
+                        </tr>
+                                    </tbody></table>
+            </div>
+            <span class="span2 bold"></span>
+            <div class="span4">
+                <table id="claim_lines" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Claim Date</th>
+                        <th>Scheme</th>
+                        <th>Total</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                     <td nowrap="nowrap">2017-12-11 10:50:28</td>
+                     <td>Bupa Global </td>
+                    <td class="amount">9.00 </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
+        <input name="claim_id" value="3" type="hidden">
+        <button type="submit" class="btn">Apply</button>
+        <button type="button" class="btn-link" onclick="Boxy.get(this).hideAndUnload()">Cancel</button>
+    </form>
+
+</section>
+
+
+<script>
+    var bAmt = 0;
+    var topay = 0;
+    var totalCharge  = $('input[name="claim_amount"]').val();
+    $('input[name^="line_ids"]').on('change', function () {
+        var bm = $(this).data('m');
+        if($(this).is(':checked')) {
+            if (topay <= totalCharge && bm <= totalCharge) {
+                $(this).parents('td').next('td').next('td').next('td').next('td').find('input').val(bm);// prop('readonly', false);
+                topay += bm;
+        }else{
+                $(this).parents('td').next('td').next('td').next('td').next('td').find('input').prop('readonly', false);
+                Boxy.warn("Amount exceeds the  Amount to be paid, please enter the amount you want to pay on this Field");
+            }
+        }else{
+         topay -= bm;
+          if(topay < 0){
+              topay += bm;
+          }
+        }
+    });
+
+
+    function save() {
+        var data = $("#claimPaymentForm").serialize();
+        $.ajax({
+            url: '/api/claimPayment.php',
+            type: 'post',
+            data: data,
+            success: function (response) {
+                console.log(response);
+                var d = response.split(":");
+                if (response === "success:payment was successful") {
+                    Boxy.info(response, function () {
+                        Boxy.get($(".close")).hideAndUnload();
+                    });
+                } else {
+                    Boxy.warn(d[1]);
+                    Boxy.get($(".close")).hideAndUnload();
+                }
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
+            }
+        })
+
+    }
+</script></body></html>

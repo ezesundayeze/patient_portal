@@ -1,0 +1,362 @@
+{% extends 'base.html' %}
+{% load mathfilters %}
+
+{% load load_extras %}
+{% block breadCrumb %}
+    <div class="row bg-title">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            <ol class="breadcrumb">
+                <li><a href="#">Patient</a></li>
+                <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                <li class="active">Bills</li>
+            </ol>
+        </div>
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+{% endblock %}
+{% block body %}
+    <!-- row  -->
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-xs-12">
+            <div class="white-box">
+                <h3 class="box-title">Filter your bills by dates</h3>
+                <form id="bill_head_form" method="post" action="/filter/bills/" class="form-material form-horizontal">
+                    {% csrf_token %}
+                    <div class="col-md-5">
+                        <input class=" form-control form-material form-control-line" type="text" name="start"
+                               value="{{ start_date }}"
+                               placeholder="Starting date">
+                    </div>
+                    <div class="col-md-5">
+                        <input class="form-control form-material  form-control-line" type="text" name="end"
+                               value="{{ end_date }}"
+                               placeholder="Stop date">
+                    </div>
+                    <input type="submit" class="btn  btn-success btn-rounded" value="Submit">
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-lg-12 col-xs-12">
+            <div class="white-box" style="margin-bottom: 0;">
+                <span class="box-title">Bill Over Head Chart</span><span class="box-title"
+                                                                         style="float: right;">{{ filter_date_range }}</span>
+                {#                <div class="row">#}
+                {#                    <div class="col-md-4 col-lg-4">#}
+                {#                        <div class="form-group">#}
+                {#                            <select class="form-control form-control-line form-material" id="selectedBill"#}
+                {#                                    placeholder="Filter by bill type">#}
+                {#                                <option value=""></option>#}
+                {#                                {% for b in bill_head_v %}#}
+                {#                                    <option value="{{ b.amount|replace_comma }}"#}
+                {#                                            data-id="{{ b.name }}">{{ b.name }}</option>#}
+                {#                                {% endfor %}#}
+                {#                            </select>#}
+                {#                        </div>#}
+                {#                    </div>#}
+                {#                </div>#}
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="container"
+                             style="min-width: 310px; max-width: 600px; height: 300px; margin: 0 auto"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- /row -->
+    <div class="row">
+        <div class="col-lg-12 col-sm-12 col-xs-12">
+            <div class="white-box">
+                <!-- Nav tabs -->
+                <ul class="nav customtab nav-tabs" role="tablist">
+                    <li role="presentation" class="nav-item"><a href="#home1" class="nav-link active"
+                                                                aria-controls="home" role="tab" data-toggle="tab"
+                                                                aria-expanded="true"><span class="visible-xs"><i
+                            class="ti-home"></i></span><span class="hidden-xs">Payments</span></a></li>
+                    <li role="presentation" class="nav-item"><a href="#messages1" class="nav-link"
+                                                                aria-controls="messages" role="tab" data-toggle="tab"
+                                                                aria-expanded="false"><span class="visible-xs"><i
+                            class="ti-email"></i></span> <span class="hidden-xs">Self Pay</span></a></li>
+                    <li role="presentation" class="nav-item"><a href="#messages2" class="nav-link"
+                                                                aria-controls="messages" role="tab" data-toggle="tab"
+                                                                aria-expanded="false"><span class="visible-xs"><i
+                            class="ti-email"></i></span> <span class="hidden-xs">Insurance Statement</span></a></li>
+                    <li role="presentation" class="nav-item"><a href="#messages3" class="nav-link"
+                                                                aria-controls="messages" role="tab" data-toggle="tab"
+                                                                aria-expanded="false"><span class="visible-xs"><i
+                            class="ti-email"></i></span> <span class="hidden-xs">Claims</span></a></li>
+                    {#                    <li role="presentation" class="nav-item"><a href="#messages4" class="nav-link"#}
+                    {#                                                                aria-controls="messages" role="tab" data-toggle="tab"#}
+                    {#                                                                aria-expanded="false"><span class="visible-xs"><i#}
+                    {#                            class="ti-email"></i></span> <span class="hidden-xs">Invoice</span></a></li>#}
+
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade active in" id="home1">
+                        <div class="col-sm-12">
+                            <div class="white-box">
+                                <div class="table-responsive">
+                                    <table
+                                            class="example23 table table-bordered table-striped text-capitalize color-bordered-table muted-bordered-table display nowrap"
+                                            cellspacing="0"
+                                            width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Description</th>
+                                            <th class="currency">Amount (<span></span>)</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for bill in bills %}
+                                            <tr>
+                                                <td>{{ bill.transaction_date }}</td>
+                                                <td>{{ bill.description }}</td>
+                                                <td>{{ bill.amount|abs }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="messages1">
+                        <div class="col-sm-12">
+                            <div class="white-box">
+                                {{ statements.transaction_date }}
+                                <div class="table-responsive">
+                                    <table
+                                            class="example23 table table-bordered table-striped text-capitalize color-bordered-table muted-bordered-table display nowrap"
+                                            cellspacing="0"
+                                            width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Description</th>
+                                            <th class="currency">Amount (<span></span>)</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for b in statements %}
+                                            <tr>
+                                                <td>{{ b.transaction_date }}</td>
+                                                <td>{{ b.description }}</td>
+                                                <td>{{ b.amount }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="messages2">
+                        <div class="col-sm-12">
+                            <div class="white-box">
+                                <div class="table-responsive">
+                                    <table
+                                            class="example23 table table-bordered table-striped text-capitalize color-bordered-table muted-bordered-table display nowrap"
+                                            cellspacing="0"
+                                            width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Description</th>
+                                            <th class="currency">Amount (<span></span>)</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for bi in bill_stmt_cop %}
+                                            <tr>
+                                                <td>{{ bi.transaction_date }}</td>
+                                                <td>{{ bi.description }}</td>
+                                                <td>{{ bi.amount|abs }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="messages3">
+                        <div class="col-sm-12">
+                            <div class="white-box">
+                                <div class="table-responsive">
+                                    <table
+                                            class="example23 table table-bordered table-striped text-capitalize color-bordered-table muted-bordered-table display nowrap"
+                                            cellspacing="0"
+                                            width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Insurance Scheme</th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for c in claims %}
+                                            <tr>
+                                                <td>{{ c.create_date }}</td>
+                                                <td>{{ c.scheme_name }}</td>
+                                                <td><a class="_print" href="javascript:" target="_blank">View-Print</a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+    <script type="text/javascript">
+        // Build the chart
+        var text_label = '';
+        {% if bill_head.0.name  %}
+            Highcharts.chart('container', {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
+                title: {
+                    text: text_label
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: false
+                        },
+                        showInLegend: true
+                    }
+                },
+                series: [{
+                    name: 'Brands',
+                    colorByPoint: true,
+                    data: [
+                        {% for bill in bill_head %}
+                            {
+                                name: '{{ bill.name }}',
+                                y: {{ bill.amount|replace_comma }}
+                            },
+                        {% endfor %}
+                    ]
+                }]
+            });
+
+        {% else %}
+            $('#container').hide();
+        {% endif %}
+
+
+
+        var requestUrl = "http://ip-api.com/json";
+        var bill_ = 0;
+
+        $(document).ready(function () {
+            $('.highcharts-credits').hide();
+            $('.form-control-line').datepicker({format: 'yyyy-mm-dd'});
+            {#            $('.example').DataTable();#}
+            $('.example23').DataTable({
+                dom: 'Bfrtip'
+                , buttons: [
+                    'pdf', 'print'
+                ]
+            });
+
+            $("#selectedBill").on('change', function () {
+                $('.highcharts-credits').hide();
+                bill_ = $(this).val();
+                var option = $('option:selected', this).attr('data-id');
+                Highcharts.chart('container', {
+                    chart: {
+                        plotBackgroundColor: null,
+                        plotBorderWidth: null,
+                        plotShadow: false,
+                        type: 'pie'
+                    },
+                    title: {
+
+                        text: text_label
+                    },
+                    tooltip: {
+                        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                    },
+                    plotOptions: {
+                        pie: {
+                            allowPointSelect: true,
+                            cursor: 'pointer',
+                            dataLabels: {
+                                enabled: false
+                            },
+                            showInLegend: true
+                        }
+                    },
+                    series: [{
+                        name: 'Brands',
+                        colorByPoint: true,
+                        data: [
+                            {
+                                name: 'Total Bill',
+                                y: {{ total|replace_comma }}
+                            }, {
+                                name: 'Total Bill',
+                                y: {{ total|replace_comma }}
+                            },
+                            {
+                                name: option,
+                                y: bill_
+                            },
+                            console.log(bill_)
+                        ]
+                    }]
+                });
+
+            });
+
+
+            $.ajax({
+                url: requestUrl,
+                type: 'GET',
+                success: function (json) {
+                    if (json.country === 'Nigeria') {
+                        $('.currency').children('span').html('&#8358;')
+                    } else if (json.country === 'Ghana') {
+                        $('.currency').children('span').html('&#8373;')
+                    }
+
+                },
+                error: function (err) {
+                    console.log("Request failed, error= " + err);
+                }
+            });
+
+
+        });
+
+    </script>
+{% endblock %}

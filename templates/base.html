@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="http://demo.medicplus.com.ng:86/static/plugins/images/favicon.png">
+    <title>Euracare Patient Portal</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="http://demo.medicplus.com.ng:86/static/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="http://demo.medicplus.com.ng:86/static/plugins/bower_components/bootstrap-extension/css/bootstrap-extension.css" rel="stylesheet">
+ <link href="http://demo.medicplus.com.ng:86/static/plugins/bower_components/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+{#    <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />#}
+<link rel="stylesheet" type="text/css" href="http://demo.medicplus.com.ng:86/static/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css">
+    <!-- Menu CSS -->
+    <link href="http://demo.medicplus.com.ng:86/static/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+    <link href="http://demo.medicplus.com.ng:86/static/plugins/bower_components/calendar/dist/fullcalendar.css" rel="stylesheet"/>
+    <!-- morris CSS -->
+    <link href="http://demo.medicplus.com.ng:86/static/plugins/bower_components/morrisjs/morris.css" rel="stylesheet">
+    <!-- animation CSS -->
+    <link href="http://demo.medicplus.com.ng:86/static/css/animate.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="http://demo.medicplus.com.ng:86/static/css/style.min.css" rel="stylesheet">
+
+    {% block styles %} {% endblock %}
+    <!-- color CSS -->
+    <link href="http://demo.medicplus.com.ng:86/static/css/colors/megna.css" id="theme" rel="stylesheet">
+  <style>
+      button.dt-button, div.dt-button, a.dt-button {
+          background-color: #3065b5;
+      }
+
+      .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{
+          border: 1px solid #3065b5 !important;
+          background-color:  #3065b5 !important;
+      }
+
+      .footer {
+        text-align: center;
+        background-color: #222;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+      .profil_s{
+          font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
+          font-size: large;
+      }
+  </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+{% load l10n %}
+{% load mathfilters %}
+
+<!-- Preloader -->
+<div class="preloader">
+    <div class="cssload-speeding-wheel"></div>
+</div>
+<div id="wrapper">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-static-top m-b-0">
+        <div class="navbar-header"><a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)"
+                                      data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
+            <div class="top-left-part"><a class="logo" href="{% url 'dashboard' %}">
+                <img src="http://demo.medicplus.com.ng:86/static/img/small-logo.png" alt="Euracare Ghana" width="170" height="56.5"/></a>
+            </div>
+            <ul class="nav navbar-top-links navbar-right hidden-xs">
+                <li class="user-pro">
+                    <a href="#" class="waves-effect">
+                            Welcome {{ patient.0.title }} {{ patient.0.fname }} {{ patient.0.lname }} </a>
+                    <i style="color: #fff;">Last Login: {{ user.last_login }}</i>
+                </li>
+                <li>
+                    <a  href="{% url 'logout' %}">Logout</a>
+                </li>
+            </ul>
+
+
+        </div>
+    </nav>
+
+    <!-- Left navbar-header -->
+    <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse slimscrollsidebar">
+            <ul class="nav" id="side-menu">
+
+                <li class="user-pro">
+                    <a href="#" class="waves-effect" style="align-content: center; text-align: center;">
+                        <img src="{{ pic }}" alt="user-img" class="img-circle" style="width: 90px;">
+            <span class="hide-menu"><span class="fa arrow"></span></span>
+                    </a>
+                    <ul class="row" style="list-style: none;">
+                        <li class="nav-small-cap m-t-10">
+                           <i>&#8594;</i>{{ patient.0.fname }} {{ patient.0.lname }}
+                        </li>
+                        <li class="nav-small-cap m-t-10">
+                         <i>&#8594;</i>  {{ patient.0.sex }}
+                        </li>
+                        <li class="nav-small-cap m-t-10">
+                           <i>&#8594;</i> {{ patient.0.date_of_birth }}
+                        </li>
+                        <li >
+                             <a  class="text-center" href="{% url 'profiles' %}"> <strong>More...</strong> </a>
+                        </li>
+
+                    </ul>
+
+                </li>
+                <li><a href="{% url 'dashboard' %}" class="waves-effect"><i class="fa fa-home"></i> <span
+                        class="hide-menu">Dashboard</span></a></li>
+                <li class="nav-small-cap m-t-10">--- Hospital Activity</li>
+                <li><a href="javascript:void(0);" class="waves-effect"><i class="fa fa-calendar"></i> <span
+                        class="hide-menu"> Appointment <span class="fa arrow"></span></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="{% url 'appointments' %}">Appointments</a></li>
+                        <li><a href="{% url 'book' %}">Book Appointment</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="javascript:void(0);" class="waves-effect"><i class="fa fa-sticky-note"></i> <span
+                        class="hide-menu"> Encounters <span class="fa arrow"></span></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="{% url 'encounters' %}">Encounters</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:void(0);" class="waves-effect"><i class="fa fa-tint"></i> <span
+                        class="hide-menu"> Lab <span class="fa arrow"></span></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="{% url 'labs' %}">Labs</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:void(0);" class="waves-effect"><i class="fa fa-image"></i> <span
+                        class="hide-menu"> Scans <span class="fa arrow"></span></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="{% url 'scans' %}">Scans</a></li>
+                    </ul>
+                </li>
+                <li><a href="javascript:void(0);" class="waves-effect"><i class="fa fa-money"></i> <span
+                        class="hide-menu"> Bills <span class="fa arrow"></span></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="{% url 'bills' %}">Bills</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Left navbar-header end -->
+
+    <!-- Page Content -->
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            {% block breadCrumb %} {% endblock %}
+
+            <!--row -->
+            {% block body %} {% endblock %}
+
+
+            <!-- /.right-sidebar -->
+        </div>
+        <!-- /.container-fluid -->
+{#        <footer class="footer text-center">Internet Experts Limited &copy; 2017 | All Rights Reserved</footer>#}
+    <footer class="footer">
+        <div class="divide40"></div>
+        <div class="footer-copyright">
+            <div class="container">
+                <span>Internet Experts Limited &copy; 2017 | All Rights Reserved</span>
+            </div>
+        </div>
+    </footer>
+    </div>
+    <!-- /#page-wrapper -->
+
+</div>
+
+<!-- /#wrapper -->
+<!-- jQuery -->
+<script src="http://demo.medicplus.com.ng:86/static//plugins/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="http://demo.medicplus.com.ng:86/static/bootstrap/dist/js/tether.min.js"></script>
+<script src="http://demo.medicplus.com.ng:86/static/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="http://demo.medicplus.com.ng:86/static/plugins/bower_components/bootstrap-extension/js/bootstrap-extension.min.js"></script>
+<!-- Menu Plugin JavaScript -->
+<script src="http://demo.medicplus.com.ng:86/static/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+<!--slimscroll JavaScript -->
+<script src="http://demo.medicplus.com.ng:86/static/js/jquery.slimscroll.js"></script>
+<!--Wave Effects -->
+<script src="http://demo.medicplus.com.ng:86/static/js/waves.js"></script>
+<!--Morris JavaScript -->
+<script src="http://demo.medicplus.com.ng:86/static/plugins/bower_components/raphael/raphael-min.js"></script>
+<script src="http://demo.medicplus.com.ng:86/static/plugins/bower_components/morrisjs/morris.js"></script>
+<!-- Sparkline chart JavaScript -->
+<script src="http://demo.medicplus.com.ng:86/static/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
+<!-- jQuery peity -->
+<script src="http://demo.medicplus.com.ng:86/static/plugins/bower_components/peity/jquery.peity.min.js"></script>
+<script src="http://demo.medicplus.com.ng:86/static/plugins/bower_components/peity/jquery.peity.init.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="http://demo.medicplus.com.ng:86/static/js/custom.min.js"></script>
+<script src="http://demo.medicplus.com.ng:86/static/js/dashboard1.js"></script>
+<script src="http://demo.medicplus.com.ng:86/static/js/data.js"></script>
+<script src="http://demo.medicplus.com.ng:86/static/js/highcharts.js"></script>
+<script src="http://demo.medicplus.com.ng:86/static/js/drilldown.js"></script>
+
+<script src="http://demo.medicplus.com.ng:86/static/calendar/jquery-ui.min.js"></script>
+<script src="http://demo.medicplus.com.ng:86/static/moment/moment.js"></script>
+<script src="http://demo.medicplus.com.ng:86/static/calendar/dist/fullcalendar.min.js"></script>
+<script src="http://demo.medicplus.com.ng:86/static/plugins/bower_components/datatables/jquery.dataTables.min.js"></script>
+
+<!-- start - This is for export functionality only -->
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+
+<!-- Datepicker js -->
+<script src="http://demo.medicplus.com.ng:86/static/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js%3Ft=20130302"></script>
+
+<!--slimscroll JavaScript -->
+<!-- Date Picker Plugin JavaScript -->
+<script src="http://demo.medicplus.com.ng:86/static/plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+
+<script src="http://demo.medicplus.com.ng:86/static/js/mask.js"></script>
+
+{% block script %} {% endblock %}
+
+{#    <script src="http://demo.medicplus.com.ng:86/static/calendar/dist/cal-init.js"></script>#}
+<!--Style Switcher -->
+<script src="http://demo.medicplus.com.ng:86/static/plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+<script language=JavaScript>
+<!--
+
+//Disable right mouse click Script
+
+var message="Function Disabled!";
+
+///////////////////////////////////
+function clickIE4(){
+if (event.button==2){
+return false;
+}
+}
+
+function clickNS4(e){
+if (document.layers||document.getElementById&&!document.all){
+if (e.which==2||e.which==3){
+return false;
+}
+}
+}
+
+if (document.layers){
+document.captureEvents(Event.MOUSEDOWN);
+document.onmousedown=clickNS4;
+}
+else if (document.all&&!document.getElementById){
+document.onmousedown=clickIE4;
+}
+
+document.oncontextmenu=new Function("return false")
+
+// -->
+</script>
+
+
+</body>
+
+</html>

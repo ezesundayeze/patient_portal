@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load load_extras %}
+{% block breadCrumb %}
+    <div class="row bg-title">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            {#                        <h4 class="page-title">My Dashboard</h4> #}
+            <ol class="breadcrumb">
+                <li><a href="#">Patient</a></li>
+                <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                <li class="active">Scans</li>
+            </ol>
+        </div>
+    </div>
+{% endblock %}
+{% block body %}
+    <div class="row">
+        <div class="col-lg-12 col-sm-12 col-xs-12">
+            <div class="white-box">
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade active in" id="home1">
+                        <div class="col-sm-12">
+                            <div class="white-box">
+                                <h3 class="box-title m-b-0">Scan</h3>
+                                <div class="table-responsive">
+                                    <table id="example23"
+                                           class="example23 table table-bordered table-striped text-capitalize  muted-bordered-table display nowrap"
+                                           cellspacing="0"
+                                           width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th>Date/Time</th>
+                                            <th>Order Name</th>
+                                            <th>Type</th>
+                                            <th>*</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% if scan %}
+                                            {% for s in scan %}
+                                                <tr>
+                                                    <td>{{ s.approved_date }}</td>
+                                                    <td>{{ s.requestcode }}</td>
+                                                    <td>{{ s.name }}</td>
+                                                    <td>
+                                                        <div class="btn-group m-r-10">
+                                            <button aria-expanded="false" data-toggle="dropdown"
+                                                    class="btn btn-success dropdown-toggle waves-effect waves-light"
+                                                    type="button"><span>Action</span></button>
+                                            <ul role="menu" class="dropdown-menu dropdown-user animated flipInY">
+                                               <li><a href="{% url 'scan_result' s.id %}">View</a>
+                                                    </li>
+                                                    <li><a href="{% url 'print_s_result' s.id %}" target="_blank">Print</a></li>
+                                            </ul>
+                                        </div>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                        {% endif %}
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block script %}
+    <script>
+        $(document).ready(function () {
+            $('.example').DataTable();
+            $('.example23').DataTable({
+                dom: 'Bfrtip'
+                , buttons: [
+                    'pdf', 'print'
+                ]
+            });
+
+        });
+    </script>
+{% endblock %}

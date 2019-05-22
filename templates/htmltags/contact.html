@@ -1,0 +1,24 @@
+<div class="container">
+        <div class="col-sm-12">
+            <form method="post" action="" id="contactForm">
+                <p> {{ form_c.type.label }}
+                    {{ form_c.type.error }}
+                    {{ form_c.type }}</p>
+                   <label style="margin-bottom: 10px;"><input type="checkbox" name="primary" > <span
+                           style="margin-left: 40px;"> Primary</span> </label>
+                <p>
+                    {{ form_c.phone.error }}
+
+                    <input type="hidden" name="nation_id" id="nation_id">
+                    <input type="text" name="patient_phones" class="patient_phones" id="patient_phones">
+                <p style="margin-bottom: 50px;"></p>
+                <div class="btn-block">
+                    <button class="btn" type="button" onclick="addContact()">Add</button>
+                    <button class="btn" type="reset">Reset</button>
+                </div>
+
+                <label id="tempPhones"></label>
+                </p>
+            </form>
+        </div>
+    </div>

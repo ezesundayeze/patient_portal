@@ -1,0 +1,384 @@
+/**************************************************************************************/
+/*
+/*	  Designed by 'AS Designing'
+/*	  http://www.asdesigning.com
+/*
+/**************************************************************************************/
+
+* { padding:0; margin:0; border: 0px;}
+
+body 
+{
+	overflow: hidden;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+}
+
+#frame_header 
+{
+	height: 6px !important;
+	background-color: rgb(0, 189, 212);
+    background-position: center top;
+    background-repeat: repeat-x;	
+	z-index: 99999;
+	position: fixed;
+	width: 100%;
+	margin: auto;
+	border-bottom: 1px solid #FFFFFF;
+	display: inline;
+}
+
+#frame_header.empty
+{
+	height: 0px;
+	display: none;	
+}
+
+#frame_header .frame_logo
+{
+	float: left;
+	width: 200px;
+	margin-top: 10px;
+	position: relative;
+	left: 30px;
+}
+
+#frame_header .more
+{
+	float: right;
+	position: relative;
+	right: 30px;
+	text-transform: uppercase;
+    margin-top: 16px;
+	display: block;
+}
+
+#frame_header .more a.items_btn
+{
+    padding: 5px 20px 7px;	
+	color: #FFF;
+	text-decoration: none;
+	font-weight: bold;
+	background-color: #d27026;
+	border-radius: 3px;
+	display: inline;
+}
+
+#frame_header .more a.details_btn
+{
+	padding: 5px 20px 7px;
+	color: #FFF;
+	text-decoration: none;
+	font-weight: bold;
+	background-color: #396;
+	border-radius: 3px;
+	display: inline;
+	margin-right: 10px;
+}
+
+#frame_header .more a:hover.items_btn,
+#frame_header .more a:hover.details_btn
+{
+	color: #000;
+	background-color: #FFF;
+}
+
+#frame_header li
+{
+	float: left;
+	list-style: none;	
+}
+
+#preview_nav
+{
+	position: relative;
+}
+
+#frames
+{
+	width: 100%;
+	text-align: center;
+}
+	
+.iframe 
+{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+iframe
+{
+	border: none;
+	width: 100%;
+}
+
+.frame_logo a.author-url
+{
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 5px;
+    text-decoration: none;
+    text-transform: uppercase;	
+}
+
+.frame_logo a.author-url:hover
+{
+    color: #d27026;
+}
+
+
+/**************************************************************************************/
+/*	Full Screen
+/**************************************************************************************/
+
+
+#frame_header #full-screen
+{
+	margin: 10px 12px 0px 20px;
+	background: url("../images/btns.preview.png") no-repeat scroll 0px -30px rgba(0, 0, 0, 0);
+	cursor: pointer;
+	height: 30px;
+	width: 30px;
+}
+
+#frame_header #full-screen a
+{
+	height: 30px;
+	width: 30px;
+	display: block;	
+}
+
+#frame_header #full-screen.active,
+#frame_header #full-screen:hover
+{
+	background: url("../images/btns.preview.png") no-repeat scroll 0px 0px rgba(0, 0, 0, 0);
+}
+
+.full-screen
+{
+	position: relative;
+}
+
+.full-screen iframe
+{
+	margin-top: 0px;
+}
+
+.full-screen.non-responsive iframe
+{
+	margin-top: 0px;
+}
+
+
+/**************************************************************************************/
+/*	Tablet Lanscape
+/**************************************************************************************/
+
+
+#frame_header #tablet-landscape
+{
+	margin: 10px 7px 0px 0px;
+	background: url("../images/btns.preview.png") no-repeat scroll -30px -30px rgba(0, 0, 0, 0);
+	cursor: pointer;
+	height: 30px;
+	width: 30px;
+}
+
+#frame_header #tablet-landscape a
+{
+	height: 30px;
+	width: 30px;
+	display: block;	
+}
+
+#frame_header #tablet-landscape.active,
+#frame_header #tablet-landscape:hover
+{
+	background: url("../images/btns.preview.png") no-repeat scroll -30px 0px rgba(0, 0, 0, 0);
+}
+
+#frames.tablet-landscape
+{
+	background: url("../images/content_bg.png") repeat-x scroll center top rgba(0, 0, 0, 0);
+	margin-bottom: 50px;
+	position: relative;
+	top: 52px;	
+	overflow: auto;
+}
+
+.tablet-landscape #frame-wrapper
+{
+	background-image: url(../images/bg.mobile.1024x690.png);
+	background-repeat: no-repeat;
+	background-position: top center;
+	height: 780px;
+	margin-top: 35px;
+	padding-top: 51px;
+}
+
+.tablet-landscape iframe
+{
+	width: 1039px; 
+	height: 690px !important;
+}
+
+
+/**************************************************************************************/
+/*	Tablet Portrait
+/**************************************************************************************/
+
+
+#frame_header #tablet-portrait
+{
+	margin: 10px 2px 0px 0px;
+	background: url("../images/btns.preview.png") no-repeat scroll -60px -30px rgba(0, 0, 0, 0);
+	height: 30px;
+	width: 30px;
+}
+
+#frame_header #tablet-portrait a
+{
+	height: 30px;
+	width: 30px;
+	display: block;	
+}
+
+#frame_header #tablet-portrait.active,
+#frame_header #tablet-portrait:hover
+{
+	background: url("../images/btns.preview.png") no-repeat scroll -60px 0px rgba(0, 0, 0, 0);
+}
+
+#frames.tablet-portrait
+{
+	background: url("../images/content_bg.png") repeat-x scroll center top rgba(0, 0, 0, 0);	
+	margin-bottom: 50px;
+	position: relative;
+	top: 52px;	
+	overflow: auto;
+}
+
+.tablet-portrait #frame-wrapper
+{
+	background-image: url(../images/bg.mobile.785x1040.png);
+	background-repeat: no-repeat;
+	background-position: top center;
+	height: 1200px;
+	margin-top: 35px;
+	padding-top: 65px;
+}
+
+.tablet-portrait iframe
+{
+	width: 783px;
+	height: 1038px !important;
+}
+
+
+/**************************************************************************************/
+/*	iPhone Landscape
+/**************************************************************************************/
+
+
+#frame_header #iphone-landscape
+{
+	margin: 10px 3px 0px 0px;
+	background: url("../images/btns.preview.png") no-repeat scroll -90px -30px rgba(0, 0, 0, 0);
+	cursor: pointer;
+	height: 30px;
+	width: 30px;
+}
+
+#frame_header #iphone-landscape a
+{
+	height: 30px;
+	width: 30px;
+	display: block;	
+}
+
+#frame_header #iphone-landscape.active,
+#frame_header #iphone-landscape:hover
+{
+	background: url("../images/btns.preview.png") no-repeat scroll -90px 0px rgba(0, 0, 0, 0);
+}
+
+#frames.iphone-landscape
+{
+	background: url("../images/content_bg.png") repeat-x scroll center top rgba(0, 0, 0, 0);
+	margin-bottom: 50px;
+	position: relative;
+	top: 52px;	
+	overflow: auto;
+}
+
+.iphone-landscape #frame-wrapper
+{
+	background-image: url(../images/bg.mobile.480x335.png);
+	background-repeat: no-repeat;
+	background-position: top center;
+	height: 500px;
+	margin-top: 50px;
+	padding-top: 29px;
+}
+
+.iphone-landscape iframe
+{
+	width: 495px;
+	height: 335px !important;
+}
+
+
+/**************************************************************************************/
+/*	iPhone Portrait
+/**************************************************************************************/
+
+
+#frame_header #iphone-portrait
+{
+	margin: 10px 8px 0px 0px;
+	background: url("../images/btns.preview.png") no-repeat scroll -120px -30px rgba(0, 0, 0, 0);
+	cursor: pointer;
+	height: 30px;
+	width: 30px;
+}
+
+#frame_header #iphone-portrait a
+{
+	height: 30px;
+	width: 30px;
+	display: block;	
+}
+
+#frame_header #iphone-portrait.active,
+#frame_header #iphone-portrait:hover
+{
+	background: url("../images/btns.preview.png") no-repeat scroll -120px 0px rgba(0, 0, 0, 0);
+}
+
+#frames.iphone-portrait
+{
+	background: url("../images/content_bg.png") repeat-x scroll center top rgba(0, 0, 0, 0);
+	margin-bottom: 50px;
+	position: relative;
+	top: 52px;	
+	overflow: auto;
+}
+
+.iphone-portrait #frame-wrapper
+{
+	background-image: url(../images/bg.mobile.320x495.png);
+	background-repeat: no-repeat;
+	background-position: top center;
+	height: 650px;
+	margin-top: 30px;
+	padding-top: 133px;
+}
+
+.iphone-portrait iframe
+{
+	width: 335px;
+	height: 495px !important;
+}

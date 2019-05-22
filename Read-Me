@@ -1,0 +1,27 @@
+# ********* This is the guide on how to deploy this to server **********
+
+# ------- REQUIREMENTS -----------
+# make sure the following dependencies are installed in your server
+# ..... sudo apt-get install libapache2-mod-wsgi
+# ..... python version 2.7 ...//
+# ..    sudo apt-get install python-pip
+# ... sudo pip install django
+# ...  apt-get install build-essential python-dev libmysqlclient-dev
+# ...  apt-get install python-mysqldb
+# ....  django version 11.0 ...
+# ....  xhtml2pdf ... // pip install xhtml2pdf
+# .... django-messages // install using pip install django-messages
+# ..... pip install djangorestframework
+# ..... pip install markdown       # Markdown support for the browsable API.
+# ...... pip install django-filter  # Filtering support
+# .....  pip install django-mathfilters
+# ..... pip uninstall html5lib
+# ..... pip install html5lib==1.0b8
+#and also check if the module is enabled.
+# ...  a2enmod wsgi
+# -------- After the above requirements are installed, then you are good to deploy and configure your apache2 -------#
+
+# ########################### CONGRATULATIONS #############################
+
+########### DEPLOYMENT ##################
+#******** pic point to medicplus directory

@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% block styles %}
+ <link rel="stylesheet" href="/static/css/style.css" />
+ <link rel="stylesheet" href="/static/css/def.css" />
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+
+{% endblock %}
+
+{% block breadCrumb %}
+ <div class="row bg-title">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <ol class="breadcrumb">
+                <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'encounters' %}">Encounters</a></li>
+                <li class="active">View</li>
+            </ol>
+        </div>
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+{% endblock %}
+
+{% block body %}
+    {% load load_extras %}
+<div class="row">
+        <div class="col-lg-12 col-sm-12 col-xs-12">
+            <div class="white-box">
+    <section style="width: 850px;">
+	<div class="row-fluid">
+		<div class="span4">
+			<div class="e-block">
+				<div class="title">Start Date</div>
+				<div class="content">{{ enc_obj.0.start_date}}</div>
+			</div>
+		</div>
+		<div class="span4">
+			<div class="e-block">
+				<div class="title">Department</div>
+				<div class="content">{{ enc_obj.0.depart_name }}</div>
+			</div>
+		</div>
+		<div class="span4">
+			<div class="e-block">
+				<div class="title">Specialization</div>
+				<div class="content">{{ enc_obj.0.staff_special_name }}</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="e-block">
+		<div class="title">Vital Signs</div>
+		<div class="content">
+            {% if vitals.count == 0 %}
+				Not available
+			{% else %}
+                {% for v in vitals %}
+						<div class="no-wrap"><strong>{{ v.type_name }}</strong>: {{ v.value }} {{ v.type_unit }}</div>
+					{% endfor %}
+			{% endif %}
+		</div>
+	</div>
+	<div class="e-block">
+		<div class="title">Presenting Complaints</div>
+		<div class="content"> <ul>  {% for cp in complain %}<li>{{ cp.description|safe }}</li>{% endfor %}</ul></div>
+	</div>
+	<div class="e-block">
+		<div class="title">Review of Systems / Examinations</div>
+		<div class="content"> <ul>{% for sys in sys_review %}<li>{{ sys.description|safe }}</li>{% endfor %}</ul></div>
+	</div>
+	<div class="e-block">
+		<div class="title">Past Medical History</div>
+		<div class="content"><ul>{% for p_m in p_medic_history %}<li>{{ p_m.description|safe }}</li>{% endfor %}</ul></div>
+	</div>
+	<div class="e-block">
+		<div class="title">Past Drug History</div>
+		<div class="content">
+            <ul>{% for d_h in p_drug_history %}<li><div class="row-fluid"><div class="span5"> {{ d_h.gen_name }} {{ d_h.gen_weight }} {{ d_h.gen_form }} </div><div class="fadedText span7">{{ d_h.comment }}</div></div></li>{% endfor %}</ul>
+        </div>
+	</div>
+
+	<div class="e-block">
+		<div class="title">Allergies</div>
+		<div class="content">
+            <ul>{% for alleg in allergies %}<li>{{ alleg.category }} {{ alleg.drug_super_gen }} {{ alleg.allergen }} {{ alleg.severity }} {{ alleg.reaction }}</li>{% endfor %}</ul>
+        </div>
+	</div>
+
+	<div class="e-block">
+		<div class="title">Family/Social History</div>
+		<div class="content"><ul>{%  for f_h in family_hist %}<li>{{ f_h.description|safe }}</li>{% endfor %}</ul></div>
+	</div>
+
+	<div class="e-block">
+		<div class="title">Physical Examination</div>
+		<div class="content"><ul>{% for phy in physical_exam %}<li>{{ phy.description|safe }}</li>{% endfor %}</ul></div>
+	</div>
+	<div class="e-block">
+		<div class="title">Physical Examination Summary</div>
+		<div class="content"><ul>{% for e_note in exam_notes %}<li>{{ e_note.description|safe }}</li>{% endfor %}</ul></div>
+	</div>
+	<div class="e-block">
+		<div class="title">Diagnoses</div>
+		<div class="content"><ul>{% for diag in diagnoses %}<li>{{ diag.description|safe }}</li>{% endfor %}</ul></div>
+	</div>
+	<div class="e-block">
+		<div class="title">Investigations</div>
+		<div class="content"><ul>{% for inv in investigations %}<li>{{ inv.descriptioin|safe }}</li>{% endfor %}</ul></div>
+	</div>
+	<div class="e-block">
+		<div class="title">Plans</div>
+		<div class="content">
+			<ul>{% for p in plans %}<li>{{ p.description|safe }}</li>{% endfor %}</ul>
+            <u>Medication</u><ul>{% for m in medications %}<li>{{ m.description|safe }}</li>{% endfor %}</ul>
+		</div>
+	</div>
+
+	<div class="e-block hide_">
+		<div class="title">Consulting Doctor</div>
+		<div class="content">
+			{{ enc_obj.0.firstname }} {{ enc_obj.0.lastname }}
+
+		</div>
+	</div>
+
+    <div class="e-block">
+		<div class="title">Signed</div>
+		<div class="content">
+			<span class="pull-left">
+				{{ enc_obj.0.firstname }} {{ enc_obj.0.lastname }}  on  {{ enc_obj.0.signed_on }}
+			</span>
+            </div>
+            </div>
+
+
+
+
+	<div class="clear"></div>
+	<div class="clear"></div>
+	<div class="clear"></div>
+
+	<div class="e-block">
+		<div class="title">Other Notes</div>
+		<div class="content">
+            {% for n in addenda %}
+				<div class="row-fluid">
+					<div class="span3">{{ n.date }}</div>
+					<div class="span8">{{ n.note }}</div>
+					<div class="span1">{{ n.username }}</div>
+				</div>
+            {% endfor %}
+		</div>
+	</div>
+
+</section>
+</div>
+</div>
+</div>
+{% endblock %}
